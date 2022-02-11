@@ -1,0 +1,108 @@
+@import 'base/style', 'base/default';
+
+.container {
+    padding-top: 100px;
+    max-width: 1000px;
+    margin: 0px auto;
+
+    .login_imgBox {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .login_inputBox {
+
+        .input_positionBox {
+            width: 570px;
+            position: relative;
+            margin: 0px auto;
+
+            img {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+
+            input {
+                width: 570px;
+                height: 48px;
+                border-style: none;
+                border: 1px solid #808080;
+                border-radius: 8px;
+                padding-left: 80px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .buttonBox {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login_button {
+            width: 570px;
+            height: 52px;
+            border-style: none;
+            background-color: $danta-color;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    }
+
+    .bulligo_banner_box {
+        text-align: center;
+        margin-top: 60px;
+
+        .mobile_banner {
+            display: none;
+        }
+    }
+
+}
+
+@include tablet_768 {
+    .container {
+        padding-top: 60px;
+
+        .login_imgBox {
+            
+            img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+
+        .login_inputBox {
+
+            .input_positionBox {
+                width: 100%;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            .login_button {
+                width: 100%;
+            }
+        }
+
+        .bulligo_banner_box {
+
+            .web_banner {
+                display: none;
+            }
+    
+            .mobile_banner {
+                width: 100%;
+                height: auto;
+                display: inline-block;
+            }
+        }
+
+    }
+}

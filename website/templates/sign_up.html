@@ -1,0 +1,43 @@
+{% extends "base.html" %}  {% block title %}sign up{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <div id="warp">
+            <div class="container">
+                <div class="login_imgBox">
+                    <h2>회원가입</h2>
+                </div>
+                <div class="login_inputBox">
+                    <div class="form-group input_positionBox">
+                        <label for="username"> 사용자 이메일 </label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="사용자 이메일 입력"/>
+                    </div>
+                </div>
+                <div class="login_inputBox">
+                    <div class="form-group input_positionBox">
+                        <label for="username"> 사용자 이름 </label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="사용자 이름 입력"/>
+                    </div>
+                </div>
+                <div class="login_inputBox">
+                    <div class="form-group input_positionBox">
+                        <label for="password"> 비밀번호 </label>
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="비밀번호 입력"/>
+                    </div>
+                    <div class="login_inputBox">
+                        <div class="form-group input_positionBox">
+                            <label for="re_password"> 비밀번호 확인 </label>
+                            <input type="password" class="form-control" id="re_password" name="re_password"
+                                   placeholder="비밀번호 확인"/>
+                        </div>
+                        <br/>
+                        <div class="buttonBox">
+                            <button type="submit" class="login_button">등 록</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

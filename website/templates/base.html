@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단타로</title>
+
+    <!-- base -->
+    <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+
+    <!-- m_nav -->
+    <link rel="stylesheet" href="../static/css/menu/menu.css">
+    <link rel="stylesheet" href="../static/css/menu/reset.css">
+
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="shortcut icon" href="../static/images/logo/dantaro.png">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+    <style>
+        footer {
+            display: flex;
+        }
+
+        .mobile_bottom_nav {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+    <nav class="nav">
+        <div class="nav_container">
+            <div class="nav_flexBox">
+                <p class="logo_img">
+                    <img src="../static/images/logo/bulligo_white_logo.svg" width="100px" height="32px"
+                         class="web_logo" onClick="location.href='index.html'">
+                    <img src="../static/images/logo/bulligo_m_logo.svg" width="34px" height="34px"
+                         class="mobile_logo" onClick="location.href='index.html'">
+                </p>
+
+                <ul class="web_menu">
+                    <li><a href="#">사용가이드</a></li>
+                    <li><a href="/">HOME</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="/upbit_bot">UPBIT</a></li>
+                        <li><a href="/apisetting">API</a></li>
+                        <!--                        <p><span>권세영</span>님<br>반갑습니다:)</p>-->
+                        <li><span class="nav_loginButton"><a href="/logout">로그아웃</a></span></li>
+                    {% else %}
+                        <li><span class="nav_loginButton"><a href="/login">로그인</a></span></li>
+                    {% endif %}
+                    <!-- <li><span class="nav_loginButton">로그아웃</span></li> -->
+                </ul>
+
+                <span class="mobile_title">dantaro</span>
+
+                <p class="btnMenu">
+                    <img src="../static/images/nav/menu_img.svg" width="26px" height="20px">
+                </p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 모바일 슬라이드 메뉴 -->
+    <div class="blackBg"></div>
+    <div class="sideMenu">
+        <div class="sideTop">
+            <p class="closeBtn">
+                <img src="../static/images/nav/close.svg" alt="모바일메뉴닫기" width="20px" height="20px">
+            </p>
+            <span class="menuTitle">MENU</span>
+        </div>
+
+        <div class="mGnb">
+            <div class="openMenu_flexBox">
+                {% if user.is_authenticated %}
+                    <!--                    <p><span>권세영</span>님<br>반갑습니다:)</p>-->
+                    <button class="logoutButton" id="logout" onclick="logout()">로그아웃</button>
+                {% else %}
+                    <button class="logoutButton" id="login" onclick="login()">로그인</button>
+                {% endif %}
+
+            </div>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li>
+                        <span href="#">사용가이드</span>
+                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">
+                    </li>
+                    <li>
+                        <span href="/">HOME</span>
+                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">
+                    </li>
+                    <li onclick="okex_bot()">
+                        <span>OKEX</span>
+                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">
+                    </li>
+                    <li onclick="upbit_bot()">
+                        <span>UPBIT</span>
+                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">
+                    </li>
+                    <li onclick="bitmex_bot()">
+                        <span>BITMEX</span>
+                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">
+                    </li>
+                    <li onclick="apisetting()">
+                        <span>API</span>
+                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">
+                    </li>
+                {% else %}
+                    <li>
+                        <span href="#">사용가이드</span>
+                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">
+                    </li>
+                    <li>
+                        <span href="/">HOME</span>
+                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">
+                    </li>
+                {% endif %}
+
+            </ul>
+        </div>
+
+    </div>
+</header>
+<script>
+    function upbit_bot() {
+        location.href = "/upbit_bot";
+    };
+
+
+    function apisetting() {
+        location.href = "/apisetting";
+    };
+
+    function logout() {
+        location.href = "/logout";
+    };
+
+    function login() {
+        location.href = "/login";
+    };
+
+</script>
+</body>
+</html>
+
+{% block content %} {% endblock %}

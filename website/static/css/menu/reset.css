@@ -1,0 +1,21 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:100,300,400,600,700,900&display=swap');
+*{margin: 0; padding: 0;}
+body{font-size: 14px; line-height: 18px; font-family: 'Noto Sans KR', sans-serif;}
+ul{list-style: none;}
+ol{list-style: none;}
+a{color: #121212; text-decoration: none;}
+img{border: none; vertical-align: top;}
+address{font-style: normal;}
+
+.cf{}
+.cf:after{content: ""; display: block; clear: both;}
+
+/* .company_section_1 img { width: 100%; height: auto;}
+.company_section_2 img { width: 100%; height: auto;}
+.company_section_4 img { width: 100%; height: auto;}
+.company_section_5 img { width: 100%; height: auto;}
+.company_section_6 img { width: 100%; height: auto;} */
+
+/* .news_section_1 img { width: 100%; height: auto;} */

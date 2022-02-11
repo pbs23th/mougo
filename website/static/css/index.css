@@ -1,0 +1,578 @@
+* {
+    font-family: Roboto;
+    color: #292929;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+*:focus {
+    outline: none;
+}
+
+html {
+    background-color: #fff;
+    position: relative;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0px auto;
+    background-color: #fff;
+    position: relative;
+}
+
+#warp {
+    padding: 0px 16px;
+    padding-bottom: 200px;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    background-color: #fff;
+    margin: 0px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+p,
+span {
+    margin: 0px;
+    padding: 0px;
+}
+
+a:link {
+    color: #292929;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #292929;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #292929;
+    text-decoration: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.container {
+    padding-top: 60px;
+    max-width: 1000px;
+    margin: 0px auto;
+}
+
+.container .start_plus_box {
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.container .start_plus_box .imgBox {
+    text-align: center;
+}
+
+.container .start_plus_box .imgBox img {
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.container .start_plus_box .text_1 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container .start_plus_box .text_2 {
+    font-size: 18px;
+    line-height: normal;
+    text-align: center;
+}
+
+.container .propertyBox {
+    width: 100%;
+    height: auto;
+    padding: 26px 30px;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: #F9FBFE;
+}
+
+.container .propertyBox .title {
+    font-size: 18px;
+}
+
+.container .propertyBox .title span {
+    font-weight: bold;
+}
+
+.container .propertyBox div p {
+    text-align: right;
+    font-size: 16px;
+}
+
+.container .propertyBox div p span {
+    font-weight: bold;
+}
+
+.container .propertyBox div .amount {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.container .buttonBox {
+    margin-top: 40px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.container .buttonBox button {
+    width: 160px;
+    height: 40px;
+    border-style: none;
+    background-color: #7699D4;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .exchangeBox {
+    width: 100%;
+    height: auto;
+    padding: 40px 30px 40px 80px;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 3px 5px 2px rgba(189, 189, 189, 0.493);
+    box-shadow: 0px 3px 5px 2px rgba(189, 189, 189, 0.493);
+    position: relative;
+}
+
+.container .exchangeBox .numbering {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    background-color: #7699D4;
+    z-index: 9;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    top: 0px;
+    left: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.container .exchangeBox .numbering p {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container .exchangeBox .back {
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    z-index: 1;
+}
+
+.container .exchangeBox .flexBox_1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.container .exchangeBox .flexBox_1 .item_1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
+}
+
+.container .exchangeBox .flexBox_1 .item_1 img {
+    margin-right: 16px;
+}
+
+.container .exchangeBox .flexBox_1 .item_1 .exchangeName p {
+    font-size: 20px;
+    line-height: normal;
+}
+
+.container .exchangeBox .flexBox_1 .item_1 .exchangeName p span {
+    color: #808080;
+}
+
+.container .exchangeBox .flexBox_1 .item_2 p {
+    font-size: 16px;
+    line-height: normal;
+}
+
+.container .exchangeBox .flexBox_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 40px;
+    z-index: 999;
+}
+
+.container .exchangeBox .flexBox_2 .item_2_m {
+    display: none;
+}
+
+.container .exchangeBox .flexBox_2 .item_3_m {
+    display: none;
+}
+
+.container .exchangeBox .flexBox_2 .item_2 .content_box p {
+    font-size: 16px;
+    line-height: normal;
+    text-align: right;
+}
+
+.container .exchangeBox .flexBox_2 .item_2 .content_box .title {
+    width: 100px;
+    text-align: right;
+    margin-bottom: 4px;
+}
+
+.container .exchangeBox .flexBox_2 .item_3 {
+    margin-left: 50px;
+}
+
+.container .exchangeBox .flexBox_2 .item_3 .content_box p {
+    font-size: 16px;
+    line-height: normal;
+    text-align: right;
+}
+
+.container .exchangeBox .flexBox_2 .item_3 .content_box .title {
+    width: 100px;
+    text-align: right;
+    margin-bottom: 4px;
+}
+
+
+/* 모바일 */
+.container .exchangeBox .flexBox_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 40px;
+    z-index: 999;
+}
+
+.container .exchangeBox .flexBox_1 .item_2_m p {
+    font-size: 16px;
+    line-height: normal;
+}
+
+.container .exchangeBox .flexBox_2 .item_2_m .content_box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .exchangeBox .flexBox_2 .item_2_m .content_box p {
+    font-size: 16px;
+    line-height: normal;
+    text-align: right;
+}
+
+.container .exchangeBox .flexBox_2 .item_2_m .content_box .title {
+    width: 100px;
+    text-align: left;
+}
+
+.container .exchangeBox .flexBox_2 .item_3_m {
+    margin-left: 50px;
+}
+
+.container .exchangeBox .flexBox_2 .item_3_m .content_box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .exchangeBox .flexBox_2 .item_3_m .content_box p {
+    font-size: 16px;
+    line-height: normal;
+    text-align: right;
+}
+
+.container .exchangeBox .flexBox_2 .item_3_m .content_box .title {
+    width: 100px;
+    text-align: left;
+}
+
+
+.container .exchangeBox .flexBox_2 .item_4 {
+    text-align: center;
+    margin-left: 50px;
+}
+
+.container .exchangeBox .flexBox_2 .item_4 .onoff_on {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50px;
+    background-color: #0CD708;
+    margin: 0px;
+}
+
+.container .exchangeBox .flexBox_2 .item_4 .onoff_off {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50px;
+    background-color: #DB0000;
+    margin: 0px;
+}
+
+.container .exchangeBox .flexBox_2 .item_5 {
+    margin-left: 50px;
+}
+
+@media (max-width: 900px) {
+    .container .index_title {
+        font-size: 25px;
+    }
+
+    .container .propertyBox {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .container .propertyBox .title {
+        margin-bottom: 20px;
+    }
+
+    .container .propertyBox div {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .container .propertyBox .item_1 {
+        margin-bottom: 20px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .container .propertyBox .item_1 .text {
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .container .propertyBox .item_1 .amount {
+        width: 100%;
+        text-align: right;
+    }
+
+    .container .propertyBox .item_2 .text {
+        font-size: 14px;
+    }
+
+    .container .propertyBox .item_3 .text {
+        font-size: 14px;
+    }
+
+    .container .buttonBox button {
+        width: 100%;
+    }
+
+    .container .exchangeBox {
+        height: auto;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        position: relative;
+        padding: 20px 30px 40px 50px;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+
+    .container .exchangeBox .back {
+        width: 180px;
+        height: auto;
+        left: 34px;
+    }
+
+
+    .container .exchangeBox .flexBox_1 {
+        width: 100%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .container .exchangeBox .flexBox_1 .item_1 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .container .exchangeBox .flexBox_1 .item_2 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+
+    .container .exchangeBox .flexBox_2 .item_2_m {
+        display: block;
+        width: 100%;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_2_m .content_box {
+        margin-bottom: 4px;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_3_m {
+        display: block;
+        width: 100%;
+        margin: 0px;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_3_m .content_box {
+        margin-bottom: 4px;
+    }
+
+    .container .exchangeBox .flexBox_2 {
+        width: 100%;
+        margin-left: 0px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_2 {
+        display: none;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_2 p {
+        text-align: left;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_3 {
+        display: none;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_3 p {
+        text-align: left;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_3 p span {
+        width: auto;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_4 {
+        position: absolute;
+        top: 26px;
+        right: 60px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_4 .onoff_on {
+        margin-right: 6px;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_4 .onoff_off {
+        margin-right: 6px;
+    }
+
+    .container .exchangeBox .flexBox_2 .item_5 {
+        position: absolute;
+        top: 26px;
+        right: 30px;
+    }
+}

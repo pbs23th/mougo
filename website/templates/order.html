@@ -1,0 +1,49 @@
+{% extends "base.html" %}  {% block title %}order{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <div id="warp">
+            <div class="container">
+                <div class="login_imgBox">
+                    <h2>주문</h2>
+                </div>
+                <div class="login_inputBox">
+                    <div class="form-group input_positionBox">
+                        <label for="market"> 주문종류 </label>
+                        <input type="text" class="form-control" id="market" name="market" placeholder="주문종류"/>
+                    </div>
+                </div>
+                <div class="login_inputBox">
+                    <div class="form-group input_positionBox">
+                        <label for="type"> 주문타입 </label>
+                        <input type="text" class="form-control" id="type" name="type" placeholder="주문타입"/>
+                    </div>
+                </div>
+                <div class="login_inputBox">
+                    <div class="form-group input_positionBox">
+                        <label for="currency"> 코인 </label>
+                        <input type="text" class="form-control" id="currency" name="currency" placeholder="코인종류 입력"/>
+                    </div>
+                </div>
+                <div class="login_inputBox">
+                    <div class="form-group input_positionBox">
+                        <label for="price"> 가격 </label>
+                        <input type="number" step="any" class="form-control" id="price" name="price"
+                               placeholder="가격 입력"/>
+                    </div>
+                </div>
+                <div class="login_inputBox">
+                    <div class="form-group input_positionBox">
+                        <label for="unit"> 주문 수량 </label>
+                        <input type="number" step="any" class="form-control" id="unit" name="unit"
+                               placeholder="비밀번호 입력"/>
+                    </div>
+                    <div class="buttonBox">
+                        <button type="submit" class="login_button">등 록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+{% endblock %}

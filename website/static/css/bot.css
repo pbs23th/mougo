@@ -1,0 +1,1154 @@
+* {
+    font-family: Roboto;
+    color: #292929;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+*:focus {
+    outline: none;
+}
+
+html {
+    background-color: #fff;
+    position: relative;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0px auto;
+    background-color: #fff;
+    position: relative;
+}
+
+#warp {
+    padding: 0px 16px;
+    padding-bottom: 200px;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    background-color: #fff;
+    margin: 0px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+p, span {
+    margin: 0px;
+    padding: 0px;
+}
+
+a:link {
+    color: #292929;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #292929;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #292929;
+    text-decoration: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.container {
+    padding-top: 60px;
+    max-width: 1000px;
+    margin: 0px auto;
+}
+
+.container .bot_flexBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.container .bot_flexBox .bot_content_1 {
+    max-width: 540px;
+    width: 65%;
+    margin-right: 40px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox {
+    width: 100%;
+    height: auto;
+    padding: 20px 30px;
+    background-color: #F9FBFF;
+    -webkit-box-shadow: 0px 3px 5px 2px rgba(189, 189, 189, 0.493);
+    box-shadow: 0px 3px 5px 2px rgba(189, 189, 189, 0.493);
+    border-radius: 5px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 .item_1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 .item_1 p {
+    font-size: 18px;
+    line-height: normal;
+    color: #808080;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 .item_1 p span {
+    font-weight: bold;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 .item_1 p img {
+    margin-right: 16px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 .item_2 p {
+    text-align: right;
+    font-size: 18px;
+    line-height: normal;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 .item_2 p span {
+    font-weight: bold;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_1 {
+    margin-right: 20px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_1 p {
+    font-size: 15px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_1 .KRW {
+    margin-bottom: 6px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_1 .KRW .title {
+    display: inline-block;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_1 .TON .title {
+    display: inline-block;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_2 p {
+    font-size: 15px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_2 .KRW {
+    margin-bottom: 6px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_2 .KRW .title {
+    display: inline-block;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_2 .TON .title {
+    display: inline-block;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 button {
+    display: inline-block;
+    width: 100px;
+    height: 26px;
+    border-style: none;
+    border-radius: 50px;
+    border: 1px solid #6B6D76;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.container .bot_flexBox .bot_content_1 .buttonBox {
+    margin-bottom: 40px;
+}
+
+.container .bot_flexBox .bot_content_1 .buttonBox button {
+    width: 100%;
+    height: 60px;
+    border-style: none;
+    background-color: #7699D4;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList {
+    display: block;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .tableButtonBox button {
+    width: 100px;
+    height: 30px;
+    border-style: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .tableButtonBox button:disabled {
+    background-color: #E9EAEC;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .tableButtonBox .btn_1 {
+    background-color: #7699D4;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .tableButtonBox .btn_2 {
+    background-color: #6B6D76;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .openOrdersTable {
+    height: 350px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .openOrdersTable table {
+    width: 100%;
+    border-spacing: 0px;
+    border: 1px solid #DCDCDC;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .openOrdersTable table tr th {
+    background-color: #E9EAEC;
+    height: 26px;
+    padding: 0px 8px;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .openOrdersTable table tr td {
+    height: 30px;
+    text-align: center;
+    border-right: 1px solid #DCDCDC;
+    border-top: 1px solid #DCDCDC;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .openOrdersTable::-webkit-scrollbar {
+    width: 2px;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .openOrdersTable::-webkit-scrollbar-thumb {
+    background-color: #818181;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .openOrdersTable::-webkit-scrollbar-track {
+    background-color: #d1d1d1;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .listNoneTable table {
+    width: 100%;
+    border-spacing: 0px;
+    border: 1px solid #DCDCDC;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .listNoneTable table tr th {
+    background-color: #E9EAEC;
+    height: 26px;
+    padding: 0px 8px;
+}
+
+.container .bot_flexBox .bot_content_1 .openOrdersList .listNoneTable table tr td {
+    height: 30px;
+    text-align: center;
+    border-right: 1px solid #DCDCDC;
+    border-top: 1px solid #DCDCDC;
+}
+
+.container .bot_flexBox .coin_bot {
+    width: 35%;
+}
+
+.container .bot_flexBox .coin_bot .botState {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.container .bot_flexBox .coin_bot .botState .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.container .bot_flexBox .coin_bot .botState .title p {
+    color: #6B6D76;
+    font-size: 16px;
+    line-height: normal;
+}
+
+.container .bot_flexBox .coin_bot .botState .title span {
+    font-weight: bold;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch {
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 36px;
+    background: #808080;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-label {
+    position: relative;
+    display: block;
+    height: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: inherit;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-label:before {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    transition: inherit;
+    content: attr(data-off);
+    right: 8px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-label:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    transition: inherit;
+    content: attr(data-on);
+    left: 8px;
+    color: #ffffff;
+    opacity: 0;
+    font-weight: bold;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-input:checked ~ .switch-label:before {
+    opacity: 0;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-input:checked ~ .switch-label:after {
+    opacity: 1;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-input:checked ~ .switch-label {
+    background: #7699D4;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-handle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border-radius: 100%;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-input:checked ~ .switch-handle {
+    left: 38px;
+}
+
+.container .bot_flexBox .coin_bot .botState .switch-label,
+.container .bot_flexBox .coin_bot .botState .switch-handle {
+    transition: All 0.3s ease;
+    -webkit-transition: All 0.3s ease;
+    -moz-transition: All 0.3s ease;
+    -o-transition: All 0.3s ease;
+}
+
+.container .bot_flexBox .coin_bot .botState .offButton {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 36px;
+    background-color: #fff;
+    border: 1px solid #272932;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .bot_flexBox .coin_bot .botState .check_reservation {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 36px;
+    background-color: #fff;
+    border: 1px solid #272932;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.container .bot_flexBox .coin_bot .botState .check_reservation_input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.container .bot_flexBox .coin_bot .botState .check_reservation_input:checked .check_reservation {
+    background-color: #808080;
+    color: #fff;
+}
+
+
+.container .bot_flexBox .coin_bot .coin_botBox {
+    height: auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #7699D4;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox p {
+    text-align: center;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox p span {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0px 40px 0px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox p img {
+    display: none;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .coinSelect {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .coinSelect select {
+    width: 160px;
+    height: 30px;
+    border-style: none;
+    border: 1px solid #6B6D76;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 label {
+    font-size: 14px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 input {
+    width: 160px;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-style: none;
+    border: 1px solid #6B6D76;
+    border-radius: 5px;
+    padding: 0px 24px 2px 8px;
+    text-align: right;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 .input_krw {
+    padding: 0px 40px 0px 8px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 span {
+    color: #C4C4C4;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-size: 12px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 button {
+    width: 160px;
+    height: 30px;
+    border-style: none;
+    background-color: #7699D4;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 20px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switchFlexBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 input {
+    width: 160px;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-style: none;
+    border: 1px solid #6B6D76;
+    border-radius: 5px;
+    padding: 0px 24px 2px 8px;
+    text-align: right;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch {
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 36px;
+    background: #808080;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-label {
+    position: relative;
+    display: block;
+    height: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: inherit;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-label:before {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    transition: inherit;
+    content: attr(data-off);
+    right: 8px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-label:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    transition: inherit;
+    content: attr(data-on);
+    left: 8px;
+    color: #ffffff;
+    opacity: 0;
+    font-weight: bold;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-input:checked ~ .switch-label:before {
+    opacity: 0;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-input:checked ~ .switch-label:after {
+    opacity: 1;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-input:checked ~ .switch-label {
+    background: #7699D4;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-handle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border-radius: 100%;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-input:checked ~ .switch-handle {
+    left: 38px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-label,
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switch-handle {
+    transition: All 0.3s ease;
+    -webkit-transition: All 0.3s ease;
+    -moz-transition: All 0.3s ease;
+    -o-transition: All 0.3s ease;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .percentage {
+    color: #C4C4C4;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-size: 12px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .percentage_2 {
+    color: #C4C4C4;
+    position: absolute;
+    right: 6px;
+    top: 8px;
+    font-size: 12px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .sub_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .sub_content label {
+    color: #CECECE;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .sub_content span {
+    color: #FF0000;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .buttonBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 50px;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .buttonBox .initializationButton {
+    width: 30%;
+    height: 48px;
+    margin-right: 10px;
+    border-style: none;
+    border: 1px solid #808080;
+    background-color: #fff;
+    color: #808080;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .bot_flexBox .coin_bot .coin_botBox .buttonBox .applicationButton {
+    width: 70%;
+    height: 48px;
+    border-style: none;
+    background-color: #7699D4;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .bot_flexBox .mobile_openOrdersList {
+    display: none;
+}
+
+@media (max-width: 960px) {
+    .container .bot_flexBox .bot_content_1 {
+        width: 60%;
+    }
+
+    .container .bot_flexBox .coin_bot {
+        width: 40%;
+    }
+}
+
+@media (max-width: 900px) {
+    .container .bot_flexBox {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .container .bot_flexBox .bot_content_1 {
+        width: 100%;
+        margin: 0px;
+        max-width: 100%;
+    }
+
+    .container .bot_flexBox .bot_content_1 .openOrdersList {
+        display: none;
+    }
+
+    .container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    .container .bot_flexBox .bot_content_1 .propertyBox .property_content_2 .property_content_2_flex .item_2 p {
+        margin-top: 6px;
+    }
+
+    .container .bot_flexBox .coin_bot {
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox p {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-bottom: 0px;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox p span {
+        margin: 0px;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox p img {
+        display: inline-block;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox p .arrow_rotate {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .setting_contentBox {
+        margin-top: 40px;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-radius: 5px;
+        border: 2px solid #6B6D76;
+        margin-top: 20px;
+        display: block;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .title {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        font-size: 18px;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .title p {
+        font-weight: bold;
+        color: #6B6D76;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .listNone_m {
+        text-align: center;
+        font-size: 16px;
+        margin-top: 40px;
+        color: #6B6D76;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .openOrders_contentBox .table_title {
+        height: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        background-color: #E9EAEC;
+        padding: 8px;
+        margin-bottom: 8px;
+        margin-top: 20px;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .openOrders_contentBox .table_title p {
+        font-size: 16px;
+        color: #6B6D76;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .openOrders_contentBox .table_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .openOrders_contentBox .table_content p {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 0px;
+        flex: 1 1 0;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin: 6px 0px 0px 0px;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .openOrders_contentBox .table_content .table_content_title {
+        font-size: 14px;
+        color: #6B6D76;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .openOrders_contentBox .table_content .table_content_content {
+        font-size: 14px;
+        color: #6B6D76;
+        font-weight: bold;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .buttonBox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-top: 40px;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .buttonBox button {
+        width: 50%;
+        height: 48px;
+        border-style: none;
+        background-color: #7699D4;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .buttonBox .applicationButton_m {
+        background-color: #6B6D76;
+    }
+
+    .container .bot_flexBox .mobile_openOrdersList .openOrders_container .buttonBox button:disabled {
+        background-color: #E9EAEC;
+    }
+}
+
+@media (max-width: 768px) {
+    .container .bot_flexBox {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .container .bot_flexBox .bot_content_1 {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .container .bot_flexBox .bot_content_1 .api_list {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot select {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot input {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot .api_button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .container .bot_flexBox {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .container .bot_flexBox .bot_content_1 {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .container .bot_flexBox .bot_content_1 .api_list {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .bot_content_1 .propertyBox {
+        padding: 20px 20px;
+    }
+
+    .container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 .item_1 p {
+        font-size: 16px;
+    }
+
+    .container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 .item_1 p img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .container .bot_flexBox .bot_content_1 .propertyBox .property_content_1 .item_2 P {
+        font-size: 16px;
+    }
+
+
+    .container .bot_flexBox .coin_bot .coin_botBox .coinSelect {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .coinSelect span {
+        margin-bottom: 10px;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .coinSelect select {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .coinSelect label {
+        margin-bottom: 10px;
+    }
+    
+
+    .container .bot_flexBox .coin_bot .coin_botBox .coinSelect span {
+        margin-bottom: 10px;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 label {
+        margin-bottom: 10px;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 input {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 span {
+        top: 34px;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_1 button {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .switchFlexBox {
+        width: 100%;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 label {
+        margin-bottom: 10px;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 input {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .percentage {
+        top: 34px;
+    }
+
+    .container .bot_flexBox .coin_bot .coin_botBox .inputBox_2 .percentage_2 {
+        top: 52px;
+    }
+
+    .container .bot_flexBox .coin_bot select {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot input {
+        width: 100%;
+    }
+
+    .container .bot_flexBox .coin_bot .api_button {
+        width: 100%;
+    }
+}

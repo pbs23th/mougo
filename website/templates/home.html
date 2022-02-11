@@ -1,0 +1,164 @@
+{% extends "base.html" %}  {% block title %}Home{% endblock %}
+
+{% block content %}
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단타로</title>
+    <!-- base -->
+    <link rel="stylesheet" href="static/css/nav.css">
+    <link rel="stylesheet" href="static/css/footer.css">
+    <!-- m_nav -->
+    <link rel="stylesheet" href="static/css/menu/menu.css">
+    <link rel="stylesheet" href="static/css/menu/reset.css">
+
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="shortcut icon" href="static/images/logo/dantaro_favicon.png">
+</head>
+<div id="warp">
+    <div class="container">
+
+
+        <!--        <p class="index_title">프로그램을 사용할 거래소를 선택하세요.</p>-->
+        <div class="propertyBox">
+            <p class="title"><span></span> {{ data }}님의 자산현황</p>
+
+            <div class="item_1">
+                <p class="text">전체 누적 수익 현황</p>
+                <p class="amount"><span style="font-size: 20px; color: #FF0000;"><span
+                        text="${totalRevenue}"></span></span>
+                    USDT</p>
+            </div>
+
+            <div class="item_2">
+                <p class="text">전체 운용 금액</p>
+                <p class="amount"><span text="${totalFunds}"></span> USDT</p>
+            </div>
+            <div class="item_3">
+                <p class="text">운용 가능 금액</p>
+                <p class="amount"><span text="${bid_balance}"></span> USDT</p>
+            </div>
+        </div>
+
+
+        <div class="buttonBox">
+            <button onClick="location.href='/apisetting'">API 변경</button>
+        </div>
+
+        <div each="flipTradingSetting, i:${flipTradingSettingList}">
+        {% for i in data %}
+            <div attr="onclick=|javascript:main('${flipTradingSetting.flipTradingSettingIdx}','${language_title}')|" class="exchangeBox">
+{#                <img src="${'static/images/exchange/'+flipTradingSetting.getFlipCurrency().getFlipExchange().getFlipExchangeName()+'_logo.png'}"#}
+{#                     width="400px" height="auto" class="back">#}
+                <input type="hidden" name="setting_idx"
+                       value="${flipTradingSetting.getFlipTradingSettingIdx()}">
+                <div class="numbering">
+                    <p text="${i.index+1}"></p>
+                </div>
+
+                <div class="flexBox_1">
+                    <div class="item_1">
+
+                        <!--<p>
+                        <img src="${'static/images/exchange/'+flipTradingSetting.getFlipCurrency().getFlipExchange().getFlipExchangeName()+'_logo.png'}"
+                             width="46px" height="46px"></p>-->
+                        <div class="exchangeName">
+                            <p><span style="font-size: 24px; font-weight: bold; color: #292929;"
+                                     text="${flipTradingSetting.getFlipCurrency().getFlipCurrencyName()}"></span>
+                                /
+                                <span text="${flipTradingSetting.flipCurrency.flipPayment}"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flexBox_2">
+                    <div class="item_2">
+                        <div class="content_box">
+                            <p class="title">운용 금액</p>
+                            <p>
+                                <span style="font-weight: bold;"
+                                      text="${flipTradingSetting.getFlipWorkingFunds()}"></span>
+                                <span text="${flipTradingSetting.getFlipCurrency().getFlipPayment()}"></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item_3">
+                        <div class="content_box">
+                            <p class="title">누적수익</p>
+                            <p style="font-weight: bold;">
+                                    <span
+                                            style="'font-weight: bold; color:'+${ flipTradingSetting.getRevenueColor}+';'"
+                                            text="${flipTradingSetting.getRevenueAmount()}">
+                                    </span>
+                                <span text="' '+ ${flipTradingSetting.flipCurrency.flipPayment}"></span>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <!-- 모바일 -->
+                    <div class="item_2_m">
+                        <div class="content_box">
+                            <p class="title">운용 금액</p>
+                            <p>
+                                <span style="font-weight: bold;"
+                                      text="${flipTradingSetting.getFlipWorkingFunds()}"></span>
+                                <span text="${flipTradingSetting.getFlipCurrency().getFlipPayment()}"></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item_3_m">
+                        <div class="content_box">
+                            <p class="title">누적수익</p>
+                            <p style="font-weight: bold;">
+                                    <span
+                                            style="'font-weight: bold; color:'+${ flipTradingSetting.getRevenueColor}+';'"
+                                            text="${flipTradingSetting.getRevenueAmount()}">
+                                    </span>
+                                <span text="' '+ ${flipTradingSetting.flipCurrency.flipPayment}"></span>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="item_4">
+                        <block if="${flipTradingSetting.isFlipTradingCheck()}">
+                            <div class="onoff_on"></div>
+                            <p>ON</p>
+                        </block>
+                        <block if="${!flipTradingSetting.isFlipTradingCheck()}">
+                            <div class="onoff_off"></div>
+                            <p>OFF</p>
+                        </block>
+                    </div>
+
+                    <div class="item_5">
+                        <img src="static/images/index/home_arrow.png" width="10px" height="20px">
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="start_plus_box">
+            <div class="imgBox">
+                <img src="static/images/index/start_plus_img.png" width="80px" height="80px"
+                     onClick="location.href='/apisetting'">
+            </div>
+
+            <p class="text_1">거래소 추가</p>
+            <p class="text_2">API 등록으로 간편하게 거래소를 추가하세요.</p>
+        </div>
+        <!--
+            <footer>
+                <img src="static/images/logo/bulligo_footer_logo.svg" width="34px" height="34px">
+            </footer>
+    -->
+
+    </div>
+</div>
+{% endblock %}

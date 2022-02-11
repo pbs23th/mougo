@@ -1,0 +1,38 @@
+$danta-color :#7699D4;
+
+// 미디어쿼리
+$danta-mobile: 360px;
+$danta-mobile-420: 420px;
+$danta-tablet-768: 768px;
+$danta-tablet-900: 900px;
+$danta-tablet-960: 960px;
+
+@mixin tablet_960  {
+  @media (max-width: #{$danta-tablet-960}) {
+    @content;
+  }
+}
+
+@mixin tablet_900  {
+  @media (max-width: #{$danta-tablet-900}) {
+    @content;
+  }
+}
+
+@mixin tablet_768  {
+    @media (max-width: #{$danta-tablet-768}) {
+      @content;
+    }
+  }
+  
+  @mixin mobile_420  {
+    @media (max-width: #{$danta-mobile-420}) {
+      @content;
+    }
+  }
+
+  @mixin mobile  {
+    @media (max-width: #{$danta-mobile}) {
+      @content;
+    }
+  }

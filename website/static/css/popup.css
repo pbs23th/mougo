@@ -1,0 +1,1104 @@
+* {
+    font-family: Roboto;
+    color: #292929;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+*:focus {
+    outline: none;
+}
+
+html {
+    background-color: #fff;
+    position: relative;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0px auto;
+    background-color: #fff;
+    position: relative;
+}
+
+#warp {
+    padding: 0px 16px;
+    padding-bottom: 200px;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    background-color: #fff;
+    margin: 0px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+p,
+span {
+    margin: 0px;
+    padding: 0px;
+}
+
+a:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.wrapper {
+    padding: 40px 60px;
+}
+
+.needpopup {
+    width: 440px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 5px 1px black;
+    box-shadow: 0 1px 5px 1px black;
+    padding: 50px;
+}
+
+.needpopup p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #343638;
+    text-align: center;
+}
+
+.needpopup p+p {
+    text-align: justify;
+}
+
+#popup_OKEX_change,
+#popup_UPBIT_change {
+    padding: 24px;
+    background-color: #7699D4;
+    position: relative;
+}
+
+#popup_OKEX_change img,
+#popup_UPBIT_change img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#popup_OKEX_change .title,
+#popup_UPBIT_change .title {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+#popup_OKEX_change .subTitle,
+#popup_UPBIT_change .subTitle {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#popup_OKEX_change .api_title,
+#popup_UPBIT_change .api_title {
+    color: #fff;
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#popup_OKEX_change input,
+#popup_UPBIT_change input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    border-style: none;
+    border-bottom: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#popup_OKEX_change input::-webkit-input-placeholder,
+#popup_UPBIT_change input::-webkit-input-placeholder {
+    color: #C3D7FA;
+    font-size: 14px;
+}
+
+#popup_OKEX_change input:-ms-input-placeholder,
+#popup_UPBIT_change input:-ms-input-placeholder {
+    color: #C3D7FA;
+    font-size: 14px;
+}
+
+#popup_OKEX_change input::-ms-input-placeholder,
+#popup_UPBIT_change input::-ms-input-placeholder {
+    color: #C3D7FA;
+    font-size: 14px;
+}
+
+#popup_OKEX_change input::placeholder,
+#popup_UPBIT_change input::placeholder {
+    color: #C3D7FA;
+    font-size: 14px;
+}
+
+#popup_OKEX_change button,
+#popup_UPBIT_change button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#popup_OKEX_change .needpopup_remover,
+#popup_UPBIT_change .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+}
+
+#popup_OKEX_change .buttonBox,
+#popup_UPBIT_change .buttonBox {
+    text-align: right;
+}
+
+#popup_OKEX_change .cancle_button,
+#popup_UPBIT_change .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+}
+
+#popup_OKEX_change .api_button,
+#popup_UPBIT_change .api_button {
+    width: 160px;
+    font-size: 16px;
+    color: #7699D4;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+#popup_api_delete {
+    padding: 24px;
+    background-color: #808080;
+    position: relative;
+}
+
+#popup_api_delete img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#popup_api_delete .title {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+#popup_api_delete .subTitle {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#popup_api_delete button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#popup_api_delete .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+}
+
+#popup_api_delete .buttonBox {
+    text-align: right;
+}
+
+#popup_api_delete .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+}
+
+#popup_api_delete .delete_button {
+    width: 160px;
+    font-size: 16px;
+    color: #808080;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+#popup_api_failed,
+#popup_api_successful {
+    padding: 24px;
+    background-color: #7699D4;
+    position: relative;
+}
+
+#popup_api_failed img,
+#popup_api_successful img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#popup_api_failed .title,
+#popup_api_successful .title {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+#popup_api_failed .subTitle,
+#popup_api_successful .subTitle {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#popup_api_failed button,
+#popup_api_successful button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+}
+
+#popup_api_failed .needpopup_remover,
+#popup_api_successful .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+}
+
+#popup_api_failed .buttonBox,
+#popup_api_successful .buttonBox {
+    text-align: right;
+}
+
+#popup_api_failed .cancle_button,
+#popup_api_successful .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+}
+
+#popup_api_failed .delete_button,
+#popup_api_successful .delete_button {
+    width: 160px;
+    font-size: 16px;
+    color: #7699D4;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+@media (max-width: 420px) {
+
+    #popup_OKEX_change img,
+    #popup_UPBIT_change img {
+        display: none;
+    }
+
+    #popup_OKEX_change .buttonBox,
+    #popup_UPBIT_change .buttonBox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: right;
+        -ms-flex-pack: right;
+        justify-content: right;
+    }
+
+    #popup_OKEX_change .buttonBox .cancle_button,
+    #popup_UPBIT_change .buttonBox .cancle_button {
+        width: 100px;
+    }
+
+    #popup_OKEX_change .buttonBox .api_button,
+    #popup_UPBIT_change .buttonBox .api_button {
+        width: 160px;
+    }
+
+    #popup_api_delete img,
+    #popup_api_failed img,
+    #popup_api_successful img {
+        display: none;
+    }
+
+    #popup_api_delete .buttonBox,
+    #popup_api_failed .buttonBox,
+    #popup_api_successful .buttonBox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: right;
+        -ms-flex-pack: right;
+        justify-content: right;
+    }
+
+    #popup_api_delete .buttonBox .cancle_button,
+    #popup_api_failed .buttonBox .cancle_button,
+    #popup_api_successful .buttonBox .cancle_button {
+        width: 100px;
+    }
+
+    #popup_api_delete .buttonBox .api_button,
+    #popup_api_failed .buttonBox .api_button,
+    #popup_api_successful .buttonBox .api_button {
+        width: 160px;
+    }
+}
+
+#popup_position_exit {
+    padding: 24px;
+    background-color: #808080;
+    position: relative;
+}
+
+#popup_position_exit img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#popup_position_exit .title {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+#popup_position_exit .subTitle {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#popup_position_exit button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#popup_position_exit .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+}
+
+#popup_position_exit .buttonBox {
+    text-align: right;
+}
+
+#popup_position_exit .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+}
+
+#popup_position_exit .delete_button {
+    width: 160px;
+    font-size: 16px;
+    color: #808080;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+@media (max-width: 420px) {
+    #popup_position_exit img {
+        display: none;
+    }
+
+    #popup_position_exit .buttonBox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: right;
+        -ms-flex-pack: right;
+        justify-content: right;
+    }
+
+    #popup_position_exit .buttonBox .cancle_button {
+        width: 100px;
+    }
+
+    #popup_position_exit .buttonBox .api_button {
+        width: 160px;
+    }
+}
+
+
+
+#popup_buyOrders {
+    padding: 24px;
+    background-color: #7699D4;
+    position: relative;
+}
+
+#popup_buyOrders img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#popup_buyOrders .title {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+#popup_buyOrders .subTitle {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#popup_buyOrders button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#popup_buyOrders .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+}
+
+#popup_buyOrders .buttonBox {
+    text-align: right;
+}
+
+#popup_buyOrders .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+}
+
+#popup_buyOrders .delete_button {
+    width: 160px;
+    font-size: 16px;
+    color: #7699D4;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+@media (max-width: 420px) {
+    #popup_buyOrders img {
+        display: none;
+    }
+
+    #popup_buyOrders .buttonBox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: right;
+        -ms-flex-pack: right;
+        justify-content: right;
+    }
+
+    #popup_buyOrders .buttonBox .cancle_button {
+        width: 100px;
+    }
+
+    #popup_buyOrders .buttonBox .api_button {
+        width: 160px;
+    }
+}
+
+
+
+#popup_openOrders_delete {
+    padding: 24px;
+    background-color: #808080;
+    position: relative;
+}
+
+#popup_openOrders_delete img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#popup_openOrders_delete .title {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+#popup_openOrders_delete .subTitle {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#popup_openOrders_delete button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#popup_openOrders_delete .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+}
+
+#popup_openOrders_delete .buttonBox {
+    text-align: right;
+}
+
+#popup_openOrders_delete .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+}
+
+#popup_openOrders_delete .delete_button {
+    width: 160px;
+    font-size: 16px;
+    color: #808080;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+@media (max-width: 420px) {
+    #popup_openOrders_delete img {
+        display: none;
+    }
+
+    #popup_openOrders_delete .buttonBox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: right;
+        -ms-flex-pack: right;
+        justify-content: right;
+    }
+
+    #popup_openOrders_delete .buttonBox .cancle_button {
+        width: 100px;
+    }
+
+    #popup_openOrders_delete .buttonBox .api_button {
+        width: 160px;
+    }
+}
+
+
+#popup_botOff_Reservation_on {
+    padding: 24px;
+    background-color: #808080;
+    position: relative;
+}
+
+#popup_botOff_Reservation_on img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#popup_botOff_Reservation_on .title {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+#popup_botOff_Reservation_on .subTitle {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#popup_botOff_Reservation_on button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#popup_botOff_Reservation_on .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+}
+
+#popup_botOff_Reservation_on .buttonBox {
+    text-align: right;
+}
+
+#popup_botOff_Reservation_on .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+}
+
+#popup_botOff_Reservation_on .delete_button {
+    width: 160px;
+    font-size: 16px;
+    color: #808080;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+@media (max-width: 420px) {
+    #popup_botOff_Reservation_on img {
+        display: none;
+    }
+
+    #popup_botOff_Reservation_on .buttonBox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: right;
+        -ms-flex-pack: right;
+        justify-content: right;
+    }
+
+    #popup_botOff_Reservation_on .buttonBox .cancle_button {
+        width: 100px;
+    }
+
+    #popup_botOff_Reservation_on .buttonBox .api_button {
+        width: 160px;
+    }
+}
+
+#popup_botOff_Reservation_off {
+    padding: 24px;
+    background-color: #808080;
+    position: relative;
+  }
+
+  #popup_botOff_Reservation_off img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  #popup_botOff_Reservation_off .title {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  #popup_botOff_Reservation_off .subTitle {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0px;
+  }
+
+  #popup_botOff_Reservation_off button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+  #popup_botOff_Reservation_off .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  #popup_botOff_Reservation_off .buttonBox {
+    text-align: right;
+  }
+
+  #popup_botOff_Reservation_off .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+  }
+
+  #popup_botOff_Reservation_off .delete_button {
+    width: 160px;
+    font-size: 16px;
+    color: #808080;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 420px) {
+    #popup_botOff_Reservation_off img {
+      display: none;
+    }
+    #popup_botOff_Reservation_off .buttonBox {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: right;
+          -ms-flex-pack: right;
+              justify-content: right;
+    }
+    #popup_botOff_Reservation_off .buttonBox .cancle_button {
+      width: 100px;
+    }
+    #popup_botOff_Reservation_off .buttonBox .api_button {
+      width: 160px;
+    }
+  }
+
+#popup_botSetting_Application {
+    padding: 24px;
+    background-color: #7699D4;
+    position: relative;
+}
+
+#popup_botSetting_Application img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#popup_botSetting_Application .title {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+#popup_botSetting_Application .subTitle {
+    color: #fff;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#popup_botSetting_Application button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#popup_botSetting_Application .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    font-size: 16px;
+    color: #fff;
+}
+
+#popup_botSetting_Application .buttonBox {
+    text-align: right;
+}
+
+#popup_botSetting_Application .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+}
+
+#popup_botSetting_Application .delete_button {
+    width: 160px;
+    font-size: 16px;
+    color: #7699D4;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+@media (max-width: 420px) {
+    #popup_botSetting_Application img {
+        display: none;
+    }
+
+    #popup_botSetting_Application .buttonBox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: right;
+        -ms-flex-pack: right;
+        justify-content: right;
+    }
+
+    #popup_botSetting_Application .buttonBox .cancle_button {
+        width: 100px;
+    }
+
+    #popup_botSetting_Application .buttonBox .api_button {
+        width: 160px;
+    }
+}
+
+#popup_buying_interval {
+    padding: 24px;
+    background-color: #fff;
+    position: relative;
+}
+
+#popup_buying_interval img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#popup_buying_interval .title {
+    color: #292929;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+#popup_buying_interval .subTitle {
+    color: #292929;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.popup_buying_interval .settingTitle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.popup_buying_interval .settingTitle .imgBox img {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    margin-right: 14px;
+    margin-top: 4px;
+}
+
+.popup_buying_interval .settingTitle .content {
+    font-size: 16px;
+}
+
+.popup_buying_interval .settingTitle .content p {
+    font-size: 16px;
+    text-align: left;
+}
+
+
+.popup_buying_interval .sectionBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.popup_buying_interval .sectionBox .inputBox {
+    position: relative;
+}
+
+.popup_buying_interval .sectionBox .inputBox input {
+    width: 260px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-style: none;
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    padding: 0px 24px 2px 8px;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.popup_buying_interval .sectionBox .inputBox .percentage {
+    position: absolute;
+    top: 9px;
+    right: 8px;
+}
+
+.popup_buying_interval .sectionBox .buttonBox {
+    display: inline-block;
+}
+
+.popup_buying_interval .sectionBox .buttonBox button {
+    width: 80px;
+    height: 40px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    margin-right: 0px;
+    background-color: #808080;
+    font-weight: bold;
+    padding: 0px 6px;
+}
+
+#popup_buying_interval label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.popup_buying_interval input {
+    width: 100%;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-style: none;
+    border: 1px solid #6B6D76;
+    border-radius: 5px;
+    padding: 0px 8px 2px 8px;
+    text-align: right;
+    margin-bottom: 10px;
+    padding: 0px 24px;
+    flex: 1 1 0;
+}
+
+
+#popup_buying_interval button {
+    height: 48px;
+    border-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#popup_buying_interval .needpopup_remover {
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #292929;
+    font-size: 16px;
+    color: #292929;
+}
+
+#popup_buying_interval .buttonBox {
+    text-align: right;
+}
+
+#popup_buying_interval .cancle_button {
+    width: 100px;
+    font-size: 16px;
+    color: #808080;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #808080;
+}
+
+#popup_buying_interval .delete_button {
+    width: 160px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 40px;
+    background-color: #7699D4;
+}
+
+@media (max-width: 420px) {
+    #popup_buying_interval img {
+        display: none;
+    }
+
+    #popup_buying_interval .buttonBox {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: right;
+        -ms-flex-pack: right;
+        justify-content: right;
+    }
+
+    #popup_buying_interval .buttonBox .cancle_button {
+        width: 100px;
+    }
+
+    #popup_buying_interval .buttonBox .api_button {
+        width: 160px;
+    }
+}

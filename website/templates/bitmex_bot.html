@@ -1,0 +1,961 @@
+{% extends "base.html" %}  {% block title %}Home{% endblock %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단타로</title>
+
+    <!-- base -->
+    <link rel="stylesheet" href="../static/css/nav.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+
+    <!-- m_nav -->
+    <link rel="stylesheet" href="../static/css/menu/menu.css">
+    <link rel="stylesheet" href="../static/css/menu/reset.css">
+
+    <link rel="stylesheet" href="../static/css/bot.css">
+
+    <!-- popup -->
+    <link rel="stylesheet" href="../static/css/popup/needpopup.min.css">
+    <link rel="stylesheet" href="../static/css/popup.css">
+
+</head>
+
+<body>
+
+<!--    <header>-->
+<!--        <nav class="nav">-->
+<!--            <div class="nav_container">-->
+<!--                <div class="nav_flexBox">-->
+<!--                    <p class="logo_img">-->
+<!--                        <img src="../static/images/logo/bulligo_white_logo.svg" width="100px" height="32px"-->
+<!--                            class="web_logo" onClick="location.href='index.html'">-->
+<!--                        <img src="../static/images/logo/bulligo_m_logo.svg" width="34px" height="34px"-->
+<!--                            class="mobile_logo" onClick="location.href='index.html'">-->
+<!--                    </p>-->
+
+<!--                    <ul class="web_menu">-->
+<!--                        <li><a href="index.html">HOME</a></li>-->
+<!--                        <li><a href="#">사용가이드</a></li>-->
+<!--                        <li><span class="nav_loginButton"><a href="login.html">로그인</a></span></li>-->
+<!--                        &lt;!&ndash; <li><span class="nav_loginButton">로그아웃</span></li> &ndash;&gt;-->
+<!--                    </ul>-->
+
+<!--                    <span class="mobile_title">봇</span>-->
+
+<!--                    <p class="btnMenu">-->
+<!--                        <img src="../static/images/nav/menu_img.svg" width="26px" height="20px">-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+
+<!--        &lt;!&ndash; 모바일 슬라이드 메뉴 &ndash;&gt;-->
+<!--        <div class="blackBg"></div>-->
+<!--        <div class="sideMenu">-->
+<!--            <div class="sideTop">-->
+<!--                <p class="closeBtn">-->
+<!--                    <img src="../static/images/nav/close.svg" alt="모바일메뉴닫기" width="20px" height="20px">-->
+<!--                </p>-->
+<!--                <span class="menuTitle">MENU</span>-->
+<!--            </div>-->
+
+<!--            <div class="mGnb">-->
+<!--                <div class="openMenu_flexBox">-->
+<!--                    <p><span>권세영</span>님<br>반갑습니다:)</p>-->
+<!--                    <button class="logoutButton">로그아웃</button>-->
+<!--                </div>-->
+<!--                <ul>-->
+<!--                    <li>-->
+<!--                        <span>사용가이드</span>-->
+<!--                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <span>마이페이지</span>-->
+<!--                        <img src="../static/images/nav/openMenu_arrow.svg" width="8px" height="16px">-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </header>-->
+
+<div id="warp">
+    <div class="container">
+
+        <div class="bot_flexBox">
+
+            <div class="bot_content_1">
+
+                <div class="propertyBox">
+                    <div class="property_content_1">
+                        <div class="item_1">
+                            <p><img src="../static/images/apiSetting/bitmex_1.png" width="46px" height="46px"></p>
+                            <p class="exchange"><span>비트맥스</span><br>(BITMEX)</p>
+                        </div>
+                            <div class="item_2">
+                                <p style="margin-bottom: 10px;"><span></span>누적수익 현황</p>
+                                <div style="display: flex;">
+                                    <p style="display: flex; flex-direction: column;">
+                                        <span style="width: 70px; text-align: left;">수익 :</span>
+                                        <span style="width: 70px; text-align: left;">거래량 :</span>
+                                    </p>
+                                    <p style="display: flex; flex-direction: column;">
+                                        <span id="revenue"></span>
+                                        <span id="vol"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="border: 0.5px solid #E9EAEC;margin: 20px 0px;">
+
+                    <div class="property_content_2">
+                        <div>
+                            <p class="wallet_balance">
+                                <span style="display: inline-block; width: 80px;">지갑 XBT</span>
+                                <span>{{ wallet }}</span>
+                            </p>
+                            <p class="KRW">
+                                <span style="display: inline-block; width: 80px;">보유 XBT</span>
+                                <span>{{ payment_bal }}</span>
+                            </p>
+                            <p class="TON">
+                                <span style="display: inline-block; width: 80px;">보유 USD</span>
+                                <span>{{ currency_bal }}</span>
+                            </p>
+                            <p class="ticker_price">
+                                <span style="display: inline-block; width: 80px;">현재가</span>
+                                <span>{{ ticker }}</span>
+                            </p>
+                            <p class="avg_price">
+                                <span style="display: inline-block; width: 80px;">평균가</span>
+                                <span>{{ avg_price }}</span>
+                            </p>
+                            <p class="rate">
+                                <span style="display: inline-block; width: 80px;">수익율</span>
+                                <span>{{ rate }} %</span>
+                            </p>
+
+
+
+
+                        </div>
+                        <button class="btn_3" data-needpopup-show="#popup_position_exit">포지션 정리</button>
+                        <!--                        <button>포지션 정리</button>-->
+                    </div>
+                </div>
+
+                <div class="buttonBox">
+                    <button type="button" onclick="location.href='/view_orderhistory' ">비트맥스 거래내역 →</button>
+                </div>
+
+                <div class="openOrdersList">
+                    <div class="title">
+                        <div>
+                            <span>미체결 목록</span>
+                            <span>{{ settingValue['currency'] }}</span>
+                        </div>
+                        <div class="tableButtonBox">
+                            <button class="btn_1" data-needpopup-show="#popup_buyOrders">매수 목록 생성</button>
+                            <button class="btn_2" data-needpopup-show="#popup_openOrders_delete">미체결 취소</button>
+                        </div>
+                    </div>
+                    <div class="openOrdersTable">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th align="center">index</th>
+                                <th align="center">time</th>
+                                <th align="center">side</th>
+                                <th align="center">price</th>
+                                <th align="center">volume</th>
+                                <th align="center">XBT</th>
+                                <th align="center">sum</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% if settingValue['currency'] != ' ' %}
+                            {% for table in tables %}
+                            <tr>
+                                <td align="center">{{loop.index}}</td>
+                                <td align="center">{{ table['timestamp'] }}</td>
+                                <td align="center">{{ table['side'] }}</td>
+                                <td align="right">{{ '{0:,.1f}'.format(table['price']) }}</td>
+                                <td align="right">{{ table['orderQty'] }}</td>
+                                <td align="right">{{ '{0:,.4f}'.format(table['XBT']) }}</td>
+                                <td align="right">{{ '{0:,.4f}'.format(table['sum']) }}</td>
+                            </tr>
+                            {% endfor %}
+                            {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- <p class="listNone">미체결 목록이 없습니다.</p> -->
+                </div>
+            </div>
+
+
+            <div class="coin_bot">
+                <div class="coinSelect">
+                    <!--                    <div class="form-group">-->
+                    <!--                        <label for="text"> 코인 </label>-->
+                    <!--                        <input type="text" class="form-control" id="currency" name="currency" value=""/>-->
+                    <!--                    </div>-->
+                    <!--                        <span>코인 선택</span>-->
+                    <!--                        <select>-->
+                    <!--                            <option>코인 선택</option>-->
+                    <!--                            <option>TON</option>-->
+                    <!--                            <option>ETH</option>-->
+                    <!--                            <option>XRP</option>-->
+                    <!--                            <option>EOS</option>-->
+                    <!--                            <option>STPT</option>-->
+                    <!--                        </select>-->
+                </div>
+
+                <div class="botState">
+                    <div class="title">
+                        <div style="margin-right: 20px;">
+                            <p><span>봇 상태</span></p>
+                            {% if data == 'on' %}
+                            <p>봇이 켜져 있습니다.</p>
+                            {% else %}
+                            <p>봇이 꺼져 있습니다.</p>
+                            {% endif %}
+                        </div>
+                        <!--                            <form method="POST" action="/bot">-->
+                        <label class="switch">
+                            <input class="switch-input" type="checkbox" id="onoff"
+                                   value="{% if data == 'on' %}on{% else %}off{% endif %}"/>
+                            <span class="switch-label" data-on="On" data-off="Off"></span>
+                            <span class="switch-handle"></span>
+                        </label>
+                        <!--                            </form>&emsp;-->
+                    </div>
+                    {%if appointment == 'off' %}
+                    <button style="cursor: pointer;" data-needpopup-show="#popup_botOff_Reservation_on">오프 예약</button>
+                    {% else %}
+                    <button style="cursor: pointer;" data-needpopup-show="#popup_botOff_Reservation_off">예약 취소</button>
+                    {% endif %}
+                    <!-- <button style="cursor: pointer; background-color: #808080; color: #fff; border: none;">오프 중</button> -->
+                </div>
+
+                <div class="coin_botBox">
+                    <p>
+                        <span>봇 설정</span>
+                        <img src="../static/images/bot/arrow_bot.svg" class="arrow_bot">
+                    </p>
+
+                    <div class="setting_contentBox">
+                        <!--                             okex-->
+<!--                        <div class="inputBox_1">-->
+<!--                            <label> 코인 </label>-->
+<!--                            <input type="text" class="form-control" id="currency" name="currency"-->
+<!--                                   value="{{ settingValue['currency'] }}"/>-->
+<!--                        </div>-->
+
+                        <div class="inputBox_1">
+                            <label>추가 매수 횟수</label>
+                            <input type="text" id="currency" value="{{ settingValue['currency'] }}" style="display:none;">
+                            <select id="currency_val" style="padding: 0px 40px 2px 8px;"
+                                    onchange="selectBoxChange3(this.value);">
+                                <option value="XBTUSD">XBTUSD</option>
+                                <option value="XBTEUR">XBTEUR</option>
+                                <option value="XBTM21">XBTM21</option>
+                                <option value="XBTH22">XBTH22</option>
+                                <option value="XBTX21">XBTX21</option>
+                                <option value="XBTEURZ21">XBTEURZ21</option>
+<!--                                <option value="XBTUSDT">XBTUSDT</option>-->
+<!--                                <option value="XBTUSDTZ21">XBTUSDTZ21</option>-->
+                            </select>
+                        </div>
+
+                        <div class="inputBox_1">
+                            <label>추가 매수 횟수</label>
+                            <input type="text" id="entry_position" value="{{ settingValue['entry_position'] }}" style="display:none;">
+                            <select id="entry_position_value" style="padding: 0px 40px 2px 8px;"
+                                    onchange="selectBoxChange2(this.value);">
+                                <option value="long">long</option>
+                                <option value="short">short</option>
+                            </select>
+                        </div>
+
+                        <div class="inputBox_1">
+                            <label>투자 시작 금액</label>
+                            <input type="number" id="wallet" value="{{ wallet }}" style="display:none;"></input>
+                            <input type="number" id="start_payment" value="{{ settingValue['start_payment'] }}"
+                                   style="padding: 0px 40px 2px 8px;">
+                            <span> %</span>
+                        </div>
+
+                        <div class="inputBox_1">
+                            <label>추가 매수 횟수</label>
+                            <input type="number" id="count" value="{{ settingValue['count'] }}" style="display:none;">
+                            <select id="counttest" style="padding: 0px 40px 2px 8px;"
+                                    onchange="selectBoxChange(this.value);">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </div>
+
+                        <div class="sub_content">
+                            <label>최초주문수량</label>
+                            <span id="testSubContent">USD</span>
+                        </div>
+
+                        <div class="inputBox_1">
+                            <label>추가 매수 간격</label>
+                            <button data-needpopup-show="#popup_buying_interval">매수 간격 지정</button>
+                        </div>
+
+                        <div class="inputBox_2">
+                            <label>익절</label>
+                            <input type="text" id="positionsell" value="{{ settingValue['positionsell'] }}">
+                            <span class="percentage">%</span>
+                        </div>
+
+                        <div class="inputBox_2">
+                            <div style="display: flex; align-items: center;">
+                                <label style="margin-right: 20px;">손절</label>
+                                <label class="switch">
+                                    <input class="switch-input" type="checkbox" checked id="stoploss"
+                                           value="{% if stoploss_onoff == 'on' %}on{% else %}off{% endif %}"/>
+                                    <span class="switch-label" data-on="On" data-off="Off"></span> <span
+                                        class="switch-handle"></span>
+                                </label>
+                            </div>
+                            <div><input type="text" id="loss_stop" value="{{ settingValue['loss_stop'] }}"></div>
+                            <span class="percentage" style="top: 8px;">%</span>
+                        </div>
+
+                        <div class="buttonBox">
+                            <button class="initializationButton">초기화</button>
+                            <button class="applicationButton" data-needpopup-show="#popup_botSetting_Application">적용하기
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="mobile_openOrdersList">
+                <div class="title">
+                    <p>{{ settingValue['currency'] }}</p>
+                    <p>미체결 목록</p>
+                    <img src="../static/images/bot/arrow_list.svg" class="arrow_list">
+                </div>
+
+                <div class="openOrders_container">
+                    {% if settingValue['currency'] != ' ' %}
+                    {% for table in tables %}
+                    <div class="openOrders_contentBox">
+                        <div class="table_title">
+                            <p>No. {{loop.index}}</p>
+                            <p>{{ table['timestamp'] }}</p>
+                        </div>
+
+                        <div class="table_content">
+                            <p style="margin-right: 20px;">
+                                <span class="table_content_title">타입</span>
+                                <span class="table_content_content">{{ table['side'] }}</span>
+                            </p>
+                            <p>
+                                <span class="table_content_title">주문가격</span>
+                                <span class="table_content_content">{{ table['price'] }}</span>
+                            </p>
+                        </div>
+
+                        <div class="table_content">
+                            <p style="margin-right: 20px;">
+                                <span class="table_content_title">주문수량</span>
+                                <span class="table_content_content">{{ table['orderQty'] }}</span>
+                            </p>
+                            <p>
+                                <span class="table_content_title">가치</span>
+                                <span class="table_content_content">{{ table['XBT'] }}</span>
+                            </p>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+
+
+                    <div class="buttonBox">
+                        <button style="margin-right: 10px;" data-needpopup-show="#popup_buyOrders">매수 목록 생성</button>
+                        <button style="background-color: #6B6D76;" data-needpopup-show="#popup_openOrders_delete">미체결
+                            삭제
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <img src="../static/images/logo/bulligo_footer_logo.svg" width="34px" height="34px">
+        </footer>
+    </div>
+
+</div>
+
+
+<!-- 팝업 -->
+<!-- 미체결 주문 삭제 -->
+
+<div id='popup_position_exit' class="needpopup">
+    <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+    <p class="title">보유수량을 전부 매도하시겠습니까?</p>
+    <p class="subTitle">선택하신 내역이 맞는지 다시 한번 확인해주세요.</p>
+
+    <div class="buttonBox">
+        <button class="cancle_button remove">취소</button>
+        <button class="delete_button remove" id="sellall">매도하기</button>
+    </div>
+</div>
+
+
+<div id='popup_buyOrders' class="needpopup">
+    <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+    <p class="title">매수 목록을 생성하시겠습니까?</p>
+    <p class="subTitle">선택하신 내역이 맞는지 다시 한번 확인해주세요.</p>
+
+    <div class="buttonBox">
+        <button class="cancle_button remove">취소</button>
+        <button class="delete_button remove" id="buyupdate">생성하기</button>
+    </div>
+</div>
+
+
+<div id='popup_openOrders_delete' class="needpopup">
+    <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+    <p class="title">미체결 주문을 삭제하시겠습니까?</p>
+    <p class="subTitle">선택하신 내역이 맞는지 다시 한번 확인해주세요.</p>
+
+    <div class="buttonBox">
+        <button class="cancle_button remove">취소</button>
+        <button class="delete_button remove" id="cancelall">삭제하기</button>
+    </div>
+</div>
+
+<div id='popup_botOff_Reservation_on' class="needpopup">
+    <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+    <p class="title">봇 오프를 예약하시겠습니까?</p>
+    <p class="subTitle">매도가 되면 봇은 오프상태가 됩니다.</p>
+
+    <div class="buttonBox">
+        <button class="cancle_button remove">취소</button>
+        <button class="delete_button remove" id="appointment_on">예약하기</button>
+    </div>
+</div>
+
+<div id='popup_botOff_Reservation_off' class="needpopup">
+    <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+    <p class="title">봇 오프 예약을 취소하시겠습니까?</p>
+    <p class="subTitle">매도가 되어도 계속 진행됩니다.</p>
+
+    <div class="buttonBox">
+        <button class="cancle_button remove">취소</button>
+        <button class="delete_button remove" id="appointment_off">예약취소</button>
+    </div>
+</div>
+
+<div id='popup_botSetting_Application' class="needpopup">
+    <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+    <p class="title">봇 설정을 적용하시겠습니까?</p>
+    <p class="subTitle">설정값에 따라 적용하고 실행하시겠습니까?</p>
+
+    <div class="buttonBox">
+        <button class="cancle_button remove">취소</button>
+        <button class="delete_button remove" id="settingsummit">확인</button>
+    </div>
+</div>
+
+
+<div id='popup_buying_interval' class="needpopup popup_buying_interval">
+    <p class="title">추가 매수 간격을 설정해주세요.</p>
+    <p class="subTitle">디폴트로 삽입된 퍼센트를 조절해주세요.</p>
+    <div class="settingTitle">
+        <div class="content">
+            <p style="font-weight: bold;">구간 설정</p>
+            <p style="font-size: 14px; letter-spacing: -0.5px;">원하는 추가 매수 구간을 입력하여 간격을 설정해보세요.</p>
+        </div>
+    </div>
+    <div class="sectionBox">
+        <div class="inputBox">
+            <input type="text" id="flipBuyTotalPercent" placeholder="매수 구간을 입력해보세요.">
+            <span class="percentage">%</span>
+        </div>
+        <div class="buttonBox">
+            <button class="button" onclick="buyPercent()">간격 적용</button>
+        </div>
+    </div>
+    <!--onclick="buyPercent()"-->
+
+    <label>매수 1 간격(%)</label>
+    <input type="text" id="buy1" value="{{ data2[0] }}">
+
+    <label>매수 2 간격(%)</label>
+    <input type="text" id="buy2" value="{{ data2[1] }}">
+
+    <label>매수 3 간격(%)</label>
+    <input type="text" id="buy3" value="{{ data2[2] }}">
+
+    <label>매수 4 간격(%)</label>
+    <input type="text" id="buy4" value="{{ data2[3] }}">
+
+    <label>매수 5 간격(%)</label>
+    <input type="text" id="buy5" value="{{ data2[4] }}">
+
+    <label>매수 6 간격(%)</label>
+    <input type="text" id="buy6" value="{{ data2[5] }}">
+
+    <label>매수 7 간격(%)</label>
+    <input type="text" id="buy7" value="{{ data2[6] }}">
+
+    <label>매수 8 간격(%)</label>
+    <input type="text" id="buy8" value="{{ data2[7] }}">
+
+    <label>매수 9 간격(%)</label>
+    <input type="text" id="buy9" value="{{ data2[8] }}">
+
+
+    <div class="buttonBox">
+        <button class="cancle_button remove">초기화</button>
+        <button class="delete_button remove" id="buyinterval">저장하기</button>
+    </div>
+</div>
+
+
+<nav class="mobile_bottom_nav">
+    <img src="../static/images/nav/mobile_bottom_nav_home.svg" width="40px" height="40px">
+</nav>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../static/js/menu/nav.js"></script>
+
+<!-- popup JS -->
+<script src="../static/js/popup/needpopup.js"></script>
+<script src="../static/js/popup/needpopup.min.js"></script>
+<script src="../static/js/popup/popup.js"></script>
+
+<script>
+    $(".arrow_bot").click(function () {
+        $(".setting_contentBox").toggle();
+    });
+
+    $(".arrow_list").click(function () {
+        $(".openOrders_container").toggle();
+    });
+</script>
+<script>
+    $("#onoff").change(function () {
+        $.ajax({
+            url: "/bitmex_bot",
+            method: "POST",
+        })
+
+    });
+
+
+    $("#cancelall").on("click", function () {
+        $.ajax({
+            url: "/bitmex_cancelall",
+            method: "POST",
+        })
+    });
+
+
+    $("#stoploss").on("click", function () {
+        $.ajax({
+            url: "/bitmex_stoploss",
+            method: "POST",
+        })
+
+    });
+
+
+    $("#buyupdate").on("click", function () {
+        $.ajax({
+            url: "/bitmex_buyupdate",
+            method: "POST",
+        })
+
+    });
+
+
+    $("#appointment_on").on("click", function () {
+        $.ajax({
+            url: "/bitmex_appointment",
+            method: "POST",
+        })
+            .success(function () {
+                location.reload();
+            })
+    });
+
+
+    $("#appointment_off").on("click", function () {
+        $.ajax({
+            url: "/bitmex_appointment",
+            method: "POST",
+        })
+            .success(function () {
+                location.reload();
+            })
+    });
+
+
+    $("#sellall").on("click", function () {
+        $.ajax({
+            url: "/bitmex_sellall",
+            method: "POST",
+        })
+            .success(function () {
+                location.reload();
+            })
+    });
+
+
+
+    $("#settingsummit").on("click", function () {
+        data2 = {
+            'currency': $("#currency").val(),
+            'start_payment': $("#start_payment").val(),
+            'entry_position': $("#entry_position").val(),
+            'count': $("#count").val(),
+            'positionsell': $("#positionsell").val(),
+            'loss_stop': $("#loss_stop").val(),
+        },
+            console.log(data2);
+            $.ajax({
+                url: "/bitmex_settings",
+                method: "POST",
+                data: data2,
+
+            })
+                .success(function () {
+                    location.reload();
+                })
+    });
+
+
+
+    $("#buyinterval").on("click", function () {
+        data2 = {
+            'buy1': $("#buy1").val(),
+            'buy2': $("#buy2").val(),
+            'buy3': $("#buy3").val(),
+            'buy4': $("#buy4").val(),
+            'buy5': $("#buy5").val(),
+            'buy6': $("#buy6").val(),
+            'buy7': $("#buy7").val(),
+            'buy8': $("#buy8").val(),
+            'buy9': $("#buy9").val(),
+        },
+            $.ajax({
+                url: "/bitmex_buyintervalset",
+                method: "POST",
+                data: data2
+
+            })
+
+    });
+
+
+    $(document).ready(function () {
+        if ($('#onoff').val() == 'on') {
+            $('#onoff').attr('checked', true);
+        } else {
+            $('#onoff').attr('checked', false);
+        }
+
+        if ($('#stoploss').val() == 'on') {
+            $('#stoploss').attr('checked', true);
+        } else {
+            $('#stoploss').attr('checked', false);
+        }
+        var wallet = Number($('#wallet').val());
+        var sp = Number($('#start_payment').val()/100);
+        var sum = Number($('#start_payment').val());
+        var position = $('#entry_position').val();
+        var currency = $('#currency').val();
+        var count = Number($('#count').val());
+        var ticker = Number($('.ticker_price span').eq(1).text())
+        var sum = 0
+        var num = 1
+        for (var i = 0; i < count; i++) {
+            num = num * 2;
+            sum += num;
+        }
+        var sum_value = sum
+        $('span#testSubContent').text(parseInt(parseInt(wallet*sp*ticker/sum_value/100)*100) + ' USD');
+        var test = $('#count').val()
+        $('#currency_val').val(currency).prop("selected", true);
+        $('#counttest').val(test).prop("selected", true);
+        $('#entry_position_value').val(position).prop("selected", true);
+    });
+
+
+    $('#start_payment, #count').keyup(function () {
+        var wallet = Number($('#wallet').val());
+        console.log('wallet' + wallet)
+        var sp = Number($('#start_payment').val()/100);
+        var count = Number($('#count').val());
+        var counttest = Number($('#counttest').val());
+        var ticker = Number($('.ticker_price span').eq(1).text())
+        var sum = 1
+        var num = 1
+        for (var i = 0; i < count; i++) {
+            num = num * 2;
+            sum += num;
+        }
+        sum_value = sum
+        $('span#testSubContent').text(parseInt(parseInt(wallet*sp*ticker/sum_value/100)*100) + ' USD');
+    });
+
+
+    $(document).ready(function () {
+        var get_revenue = setInterval(function () {
+            $.ajax({
+                url: "/bitmex_get_revenue",
+                method: "GET",
+                success: function (data, textStatus, jqXHR) {
+                    var revenue = Number(data[1]).toFixed(8)
+                    var vol = Number(data[0]).toFixed(8)
+                    var avg_price = Number(data[2]);
+                    var avg_unit = Number(data[3]);
+                    var KRW = Number(data[4]);
+                    var ticker_price = Number(data[5]);
+                    var wallet = Number(data[6]);
+                    var position = $('#entry_position').val()
+                    if (avg_price == 0) {
+                        rate = 0
+                    } else { if(position == 'long') {
+                        var rate = (((ticker_price - avg_price) / avg_price)*100).toFixed(2)
+                    } else {
+                        var rate = (((avg_price - ticker_price) / avg_price)*100).toFixed(2)
+                    }
+                    }
+                    $('#revenue').text(revenue + ' ' + "XBT")
+                    $('#vol').text(vol + ' ' + "XBT")
+                    $('.wallet_balance span').eq(1).text(wallet)
+                    $('.KRW span').eq(1).text(KRW)
+                    $('.TON span').eq(1).text(avg_unit)
+                    $('.avg_price span').eq(1).text(avg_price)
+                    $('.ticker_price span').eq(1).text(ticker_price)
+                    $('.rate span').eq(1).text(rate +" %")
+                    console.log(data)
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });
+        }, 1000);
+    });
+
+        $(document).ready(function () {
+            $.ajax({
+                url: "/bitmex_get_order_list",
+                method: "GET",
+                success: function (data, textStatus, jqXHR) {
+                    console.log(data)
+                    $('.openOrdersTable tbody tr').remove();
+                    $('.openOrders_contentBox div').remove();
+                    if (data.getorder) {
+                        for (let i = 0; i < data.getorder.length; i++) {
+                            var index = i + 1;
+                            var date = data.getorder[i].timestamp;
+                            var sz = Number(data.getorder[i].orderQty);
+                            var usdt = data.getorder[i].XBT.toFixed(4);
+                            var sum = data.getorder[i].sum.toFixed(4);
+
+                            $('.openOrdersTable tbody').append(
+                                '<tr><td align="center">' + index +
+                                '</td><td align="center">' + date +
+                                '</td><td align="center">' + data.getorder[i].side +
+                                '</td><td align="right">' + data.getorder[i].price +
+                                '</td><td align="right">' + sz +
+                                '</td><td align="right">' + usdt +
+                                '</td><td align="right">' + sum + '</td></tr>');
+                            $('.openOrders_contentBox').append(
+                                '<div class="table_title">\n' + '<p>' + 'No. ' +
+                                index + '</p>\n' + '<p>' + date + '</p>\n' +
+                                '</div>\n' + '\n' +
+                                '<div class="table_content">\n' +
+                                '<p style="margin-right: 20px;">\n' +
+                                '<span class="table_content_title">타입</span>\n' +
+                                '<span class="table_content_content">' + data
+                                .getorder[i].side + '</span>\n' + '</p>\n' +
+                                '<p>\n' +
+                                '<span class="table_content_title">주문가격</span>\n' +
+                                '<span class="table_content_content">' + data
+                                .getorder[i].price + '</span>\n' + '</p>\n' +
+                                '</div>\n' + '\n' +
+                                '<div class="table_content">\n' +
+                                '<p style="margin-right: 20px;">\n' +
+                                '<span class="table_content_title">주문수량</span>\n' +
+                                '<span class="table_content_content">' + sz +
+                                '</span>\n' +
+                                '</p>\n' +
+                                '<p>\n' +
+                                '<span class="table_content_title">가치</span>\n' +
+                                '<span class="table_content_content">' + usdt +
+                                '</span>\n' +
+                                '</p>\n');
+                        }
+                    }
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });
+    });
+
+
+    $(document).ready(function () {
+        var unSignedInterval = setInterval(function () {
+            $.ajax({
+                url: "/bitmex_get_order_list",
+                method: "GET",
+                success: function (data, textStatus, jqXHR) {
+                    console.log(data)
+                    $('.openOrdersTable tbody tr').remove();
+                    $('.openOrders_contentBox div').remove();
+                    if (data.getorder) {
+                        for (let i = 0; i < data.getorder.length; i++) {
+                            var index = i + 1;
+                            var date = data.getorder[i].timestamp;
+                            var sz = Number(data.getorder[i].orderQty);
+                            var usdt = data.getorder[i].XBT.toFixed(4);
+                            var sum = data.getorder[i].sum.toFixed(4);
+
+                            $('.openOrdersTable tbody').append(
+                                '<tr><td align="center">' + index +
+                                '</td><td align="center">' + date +
+                                '</td><td align="center">' + data.getorder[i].side +
+                                '</td><td align="right">' + data.getorder[i].price +
+                                '</td><td align="right">' + sz +
+                                '</td><td align="right">' + usdt +
+                                '</td><td align="right">' + sum + '</td></tr>');
+                            $('.openOrders_contentBox').append(
+                                '<div class="table_title">\n' + '<p>' + 'No. ' +
+                                index + '</p>\n' + '<p>' + date + '</p>\n' +
+                                '</div>\n' + '\n' +
+                                '<div class="table_content">\n' +
+                                '<p style="margin-right: 20px;">\n' +
+                                '<span class="table_content_title">타입</span>\n' +
+                                '<span class="table_content_content">' + data
+                                .getorder[i].side + '</span>\n' + '</p>\n' +
+                                '<p>\n' +
+                                '<span class="table_content_title">주문가격</span>\n' +
+                                '<span class="table_content_content">' + data
+                                .getorder[i].price + '</span>\n' + '</p>\n' +
+                                '</div>\n' + '\n' +
+                                '<div class="table_content">\n' +
+                                '<p style="margin-right: 20px;">\n' +
+                                '<span class="table_content_title">주문수량</span>\n' +
+                                '<span class="table_content_content">' + sz +
+                                '</span>\n' +
+                                '</p>\n' +
+                                '<p>\n' +
+                                '<span class="table_content_title">가치</span>\n' +
+                                '<span class="table_content_content">' + usdt +
+                                '</span>\n' +
+                                '</p>\n');
+                        }
+                    }
+                },
+                error: function () {
+                    console.log('error');
+                }
+            });
+        }, 2000);
+    });
+
+
+    function getTime(timestamp) {
+        var date = new Date(Number(timestamp));
+        console.log(timestamp)
+
+        var year = date.getFullYear();
+        var month = (date.getMonth() + 1);
+        var day = date.getDate();
+
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        var milliseconds = date.getMilliseconds()
+        return formateTime(year, month, day, hour, minute, second, milliseconds);
+    }
+
+    function formateTime(year, month, day, hour, minute, second, milliseconds) {
+         console.log(year+month+day+hour+minute+second+milliseconds)
+        return makeDoubleDigit(year) + "-" +
+            makeDoubleDigit(month) + "-" +
+            makeDoubleDigit(day) + " " +
+            makeDoubleDigit(hour) + ":" +
+            makeDoubleDigit(minute) + ":" +
+            makeDoubleDigit(second);
+    }
+
+    function makeDoubleDigit(x) {
+        return (x < 10) ? "0" + x : x;
+    }
+
+
+    function buyPercent() {
+        let flipBuyCount = $("#count").val();
+        let accumulateNumber = 0;
+        for (let i = 1; i <= flipBuyCount; i++) {
+            accumulateNumber = accumulateNumber + i;
+        }
+        let flipBuyTotalPercent2 = $("#flipBuyTotalPercent").val();
+
+        for (let i = 1; i <= flipBuyCount; i++) {
+            let flipBuyPercent = i / accumulateNumber * flipBuyTotalPercent2;
+            $("#buy" + i).val(flipBuyPercent.toFixed(2));
+        }
+    }
+
+    var selectBoxChange = function (value) {
+        console.log("값 변경테스트 " + value);
+        $("#counttest").val(value)
+        $("#count").val(value)
+
+    }
+
+        var selectBoxChange2 = function (value) {
+        console.log("값 변경테스트 " + value);
+        $("#entry_position_value").val(value)
+        $("#entry_position").val(value)
+
+    }
+
+            var selectBoxChange3 = function (value) {
+        console.log("값 변경테스트 " + value);
+        $("#currency").val(value)
+        $("#currency_val").val(value)
+
+    }
+</script>
+
+
+</body>
+{% endblock %}

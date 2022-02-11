@@ -1,0 +1,157 @@
+* {
+  font-family: Roboto;
+  color: #292929;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: normal;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  background-color: #fff;
+  position: relative;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0px auto;
+  background-color: #fff;
+  position: relative;
+}
+
+#warp {
+  padding: 0px 16px;
+  padding-bottom: 200px;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background-color: #fff;
+  margin: 0px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+p, span {
+  margin: 0px;
+  padding: 0px;
+}
+
+a:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container {
+  padding-top: 100px;
+  max-width: 1000px;
+  margin: 0px auto;
+}
+
+.container .login_imgBox {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.container .login_inputBox .input_positionBox {
+  width: 570px;
+  position: relative;
+  margin: 0px auto;
+}
+
+.container .login_inputBox .input_positionBox img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.container .login_inputBox .input_positionBox input {
+  width: 570px;
+  height: 48px;
+  border-style: none;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  padding-left: 80px;
+  margin-bottom: 20px;
+}
+
+.container .login_inputBox .buttonBox {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container .login_inputBox .login_button {
+  width: 570px;
+  height: 52px;
+  border-style: none;
+  background-color: #7699D4;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container .bulligo_banner_box {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.container .bulligo_banner_box .mobile_banner {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 60px;
+  }
+  .container .login_imgBox img {
+    width: 80px;
+    height: 80px;
+  }
+  .container .login_inputBox .input_positionBox {
+    width: 100%;
+  }
+  .container .login_inputBox .input_positionBox input {
+    width: 100%;
+  }
+  .container .login_inputBox .login_button {
+    width: 100%;
+  }
+  .container .bulligo_banner_box .web_banner {
+    display: none;
+  }
+  .container .bulligo_banner_box .mobile_banner {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+}

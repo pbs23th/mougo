@@ -1,0 +1,333 @@
+* {
+  font-family: Roboto;
+  color: #292929;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: normal;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  background-color: #fff;
+  position: relative;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0px auto;
+  background-color: #fff;
+  position: relative;
+}
+
+#warp {
+  padding: 0px 16px;
+  padding-bottom: 200px;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background-color: #fff;
+  margin: 0px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+p, span {
+  margin: 0px;
+  padding: 0px;
+}
+
+a:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container {
+  padding-top: 60px;
+  max-width: 1000px;
+  margin: 0px auto;
+}
+
+.container .api_flexBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .api_flexBox .api_currentSituation {
+  margin-right: 20px;
+}
+
+.container .api_flexBox .api_currentSituation .title {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.container .api_flexBox .api_currentSituation .title span {
+  font-weight: bold;
+}
+
+.container .api_flexBox .api_currentSituation .subTitle {
+  font-size: 16px;
+  color: #808080;
+}
+
+.container .api_flexBox .api_currentSituation .api_list_none {
+  width: 420px;
+  height: 48px;
+  border: 2px solid #7699D4;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+
+.container .api_flexBox .api_currentSituation .api_list_none p {
+  color: #808080;
+}
+
+.container .api_flexBox .api_currentSituation .api_list {
+  width: 420px;
+  height: auto;
+  border: 2px solid #7699D4;
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_1 .exchange_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_1 p {
+  margin-right: 8px;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_1 .buttonBox button {
+  width: 60px;
+  height: 40px;
+  border-style: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_1 .buttonBox .change {
+  background-color: #7699D4;
+  margin-right: 8px;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_1 .buttonBox .delete {
+  background-color: #808080;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_2 {
+  width: 100%;
+  font-size: 13px;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_2 .apiKeyBox, .container .api_flexBox .api_currentSituation .api_list .api_content_2 .secretKeyBox, .container .api_flexBox .api_currentSituation .api_list .api_content_2 .passphraseBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_2 .apiKeyBox div, .container .api_flexBox .api_currentSituation .api_list .api_content_2 .secretKeyBox div, .container .api_flexBox .api_currentSituation .api_list .api_content_2 .passphraseBox div {
+  display: inline-block;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_2 .title {
+  width: 80px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #808080;
+  margin-bottom: 8px;
+}
+
+.container .api_flexBox .api_currentSituation .api_list .api_content_2 .content {
+  text-align: left;
+  word-break: break-all;
+}
+
+.container .api_flexBox .api_setting .title {
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.container .api_flexBox .api_setting label {
+  display: inline-block;
+  font-size: 16px;
+  color: #808080;
+}
+
+.container .api_flexBox .api_setting select {
+  display: block;
+  width: 420px;
+  height: 48px;
+  border-style: none;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  margin-top: 30px;
+  color: #808080;
+  padding-left: 8px;
+}
+
+.container .api_flexBox .api_setting .announcement {
+  font-size: 14px;
+  color: #FF0000;
+  margin-top: 4px;
+  display: none;
+}
+
+.container .api_flexBox .api_setting input {
+  display: block;
+  width: 420px;
+  height: 40px;
+  margin-bottom: 12px;
+  border-style: none;
+  border-bottom: 1px solid #808080;
+}
+
+.container .api_flexBox .api_setting input::-webkit-input-placeholder {
+  color: #C0C0C0;
+  font-size: 16px;
+}
+
+.container .api_flexBox .api_setting input:-ms-input-placeholder {
+  color: #C0C0C0;
+  font-size: 16px;
+}
+
+.container .api_flexBox .api_setting input::-ms-input-placeholder {
+  color: #C0C0C0;
+  font-size: 16px;
+}
+
+.container .api_flexBox .api_setting input::placeholder {
+  color: #C0C0C0;
+  font-size: 16px;
+}
+
+.container .api_flexBox .api_setting .api_button {
+  width: 420px;
+  height: 48px;
+  border-style: none;
+  margin-top: 40px;
+  background-color: #7699D4;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .container .api_flexBox .api_currentSituation {
+    width: 50%;
+  }
+  .container .api_flexBox .api_currentSituation .api_list {
+    width: 100%;
+  }
+  .container .api_flexBox .api_setting {
+    width: 50%;
+  }
+  .container .api_flexBox .api_setting select {
+    width: 100%;
+  }
+  .container .api_flexBox .api_setting input {
+    width: 100%;
+  }
+  .container .api_flexBox .api_setting .api_button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 40px;
+  }
+  .container .api_flexBox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container .api_flexBox .api_currentSituation {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .container .api_flexBox .api_currentSituation .api_list {
+    width: 100%;
+  }
+  .container .api_flexBox .api_setting {
+    width: 100%;
+  }
+  .container .api_flexBox .api_setting select {
+    width: 100%;
+  }
+  .container .api_flexBox .api_setting input {
+    width: 100%;
+  }
+  .container .api_flexBox .api_setting .api_button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,367 @@
+{% extends "base.html" %}  {% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>단타 프로그램</title>
+
+        <!-- base -->
+        <link rel="stylesheet" href="../static/css/nav.css">
+        <link rel="stylesheet" href="../static/css/footer.css">
+
+        <!-- m_nav -->
+        <link rel="stylesheet" href="../static/css/menu/menu.css">
+        <link rel="stylesheet" href="../static/css/menu/reset.css">
+
+        <link rel="stylesheet" href="../static/css/transactionDetails.css">
+
+        <link rel="shortcut icon" href="../static/images/logo/dantaro_favicon.png">
+
+    </head>
+
+    <body>
+
+    <div id="warp">
+        <div class="container">
+            <div class="title_flex">
+                <img src="../static/images/transactionDetails/transactionDetails_back.png" width="36px" height="36px"
+                     onClick="location.href='bot.html'">
+                <p class="transactionTitle">
+                    <span name="transaction_exchage_name"></span> 거래내역</p>
+            </div>
+
+            <!-- 거래내역 없을 시 사용 -->
+            <!-- <div class="non_list">
+                <p class="programTitle_w">프로그램<br>거래현황</p>
+                <p class="programTitle_m">프로그램 거래현황</p>
+
+                <div>
+                    <p>거래 내역이 없습니다.</p>
+                </div>
+            </div> -->
+
+            <!-- 거래내역 없을 시 사용 -->
+            <div class="programBox">
+                <p class="programTitle_w">프로그램 운용현황</p>
+                <!-- <p class="programTitle_m">프로그램 운용현황</p> -->
+
+                <div class="contentFlex">
+                    <div class="contentBox">
+                        <p class="title">매수</p>
+                        <p class="content">89.2480</p>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="contentBox">
+                        <p class="title">매도</p>
+                        <p class="content">89.3588</p>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="contentBox">
+                        <p class="title">누적수익금액</p>
+                        <p class="content">0.1107</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 검색 -->
+            <form action="/order_history" method="post">
+                <div class="conditionBox">
+                    <div class="coinSelect">
+                        <label>코인선택</label>
+                        <select name="coin_name" id="coin_name">
+                            <option value="all">전체</option>
+                            <option value="KRW-BTC">KRW-BTC</option>
+                        </select>
+                    </div>
+
+                    <div class="dateBox">
+                        <div class="dateSelect">
+                            <label>기간선택</label>
+                            <select name="select_date" id="select_date" onchange="selectBoxChange(this.value);">
+                                <option value="all">전체</option>
+                                <option value="1W">1주일</option>
+                                <option value="1M">1개월</option>
+                                <option value="3M">3개월</option>
+                                <option value="6M">6개월</option>
+                            </select>
+                        </div>
+                        <div class="dateChoice">
+                            <input type="date" name="start_time" id="start_time">
+                            <span>~</span>
+                            <input type="date" name="end_time" id="end_time">
+                        </div>
+                        <button type="submit">검색</button>
+                    </div>
+
+                </div>
+            </form>
+            {#            <form action="" id="setRows">#}
+            {#                <input type="text" name="rowPerPage" value="20" style="display:none;">#}
+            {#            </form>#}
+
+            <div class="tableBox">
+                <table class="web_table" id="products" border="1">
+                    <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>코인명</th>
+                        <th>타입</th>
+                        <th>체결시간</th>
+                        <th>체결가격</th>
+                        <th>체결수량</th>
+                        <th>금액</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for table in tables %}
+                        <tr>
+                            <td align="center">{{ loop.length - loop.index }}</td>
+                            <td align="center">{{ table['market'] }}</td>
+                            <td align="center">{{ table['side'] }}</td>
+                            <td align="right">{{ table['transact_time'] }}</td>
+                            <td align="right">{{ '{:,}'.format(table['price']) }}</td>
+                            <td align="right">{{ '{:,}'.format(table['unit']) }}</td>
+                            <td align="right">{{ '{:,.2f}'.format(table['unit']*table['price']) }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <ul class="pagination">
+                </ul>
+            </div>
+            <div class="tableBox">
+                <div class="mobile_table"  id="products">
+                    <div class="transactionDetails">
+                        {% for table in tables %}
+                            <div class="table_title">
+                                <p>{{ loop.length - loop.index }}</p>
+                                <div>
+                                    <p style="margin-right: 8px;">{{ table['transact_time'] }}</p>
+                                    <p>{{ table['market'] }}</p>
+                                </div>
+                            </div>
+                            <div class="table_content">
+                                <p style="margin-right: 20px;">
+                                    <span class="table_content_title">코인명</span>
+                                    <span class="table_content_content">{{ table['market'] }}</span>
+                                </p>
+                                <p>
+                                    <span class="table_content_title">체결가격</span>
+                                    <span class="table_content_content">{{ '{:,}'.format(table['price']) }}</span>
+                                </p>
+                            </div>
+
+                            <div class="table_content">
+                                <p style="margin-right: 20px;">
+                                    <span class="table_content_title">수량</span>
+                                    <span class="table_content_content">{{ '{:,}'.format(table['unit']) }}</span>
+                                </p>
+                                <p>
+                                    <span class="table_content_title">금액</span>
+                                    <span class="table_content_content">{{ '{:,.2f}'.format(table['unit']*table['price']) }}</span>
+                                </p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <br>
+
+                <footer>
+                    <img src="../static/images/logo/bulligo_footer_logo.svg" width="34px" height="34px">
+                </footer>
+{#                <ul class="pagination">#}
+{#                </ul>#}
+
+            </div>
+        </div>
+    </div>
+
+    <nav class="mobile_bottom_nav">
+        <img src="../static/images/nav/mobile_bottom_nav_home.svg" width="40px" height="40px"
+             onClick="location.href='index.html'">
+    </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/menu/nav.js"></script>
+
+    </body>
+
+    </html>
+    <style>
+        .pagination {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .pagination span {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination span.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination span:hover:not(.active) {
+            background-color: rgba(145, 26, 26, 0.13);
+        }
+
+        .tableBox {
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        //만들어진 테이블에 페이지 처리
+        function page() {
+            $('#products').each(function () {
+                var pagesu = 10;  //페이지 번호 갯수
+                var currentPage = 0;
+                var numPerPage = 20;  //목록의 수
+                var $table = $(this);
+                var pagination = $(".pagination");
+//length로 원래 리스트의 전체길이구함
+                var numRows = $table.find('tbody tr').length;
+                console.log('numRows' + numRows)
+
+//Math.ceil를 이용하여 반올림
+                var numPages = Math.ceil(numRows / numPerPage);
+                console.log('numPages' + numPages)
+
+//리스트가 없으면 종료
+                if (numPages == 0) return;
+//pager라는 클래스의 div엘리먼트 작성
+                var $pager = $('<div class="pager"></div>');
+                var nowp = currentPage;
+                var endp = nowp + 10;
+//페이지를 클릭하면 다시 셋팅
+                $table.bind('repaginate', function () {
+//기본적으로 모두 감춘다, 현재페이지+1 곱하기 현재페이지까지 보여준다
+                    $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+                    $(".pagination").html("");
+                    if (numPages > 1) {     // 한페이지 이상이면
+                        if (currentPage < 5 && numPages - currentPage >= 5) {   // 현재 5p 이하이면
+                            nowp = 0;     // 1부터
+                            endp = pagesu;    // 10까지
+                        } else {
+                            nowp = currentPage - 5;  // 6넘어가면 2부터 찍고
+                            endp = nowp + pagesu;   // 10까지
+                            pi = 1;
+                        }
+                        if (numPages < endp) {   // 10페이지가 안되면
+                            endp = numPages;   // 마지막페이지를 갯수 만큼
+                            nowp = numPages - pagesu;  // 시작페이지를   갯수 -10
+                        }
+                        if (nowp < 1) {     // 시작이 음수 or 0 이면
+                            nowp = 0;     // 1페이지부터 시작
+                        }
+                    } else {       // 한페이지 이하이면
+                        nowp = 0;      // 한번만 페이징 생성
+                        endp = numPages;
+                    }
+// [처음]
+                    $('<span class="pageNum first">처음</span>').bind('click', {newPage: page}, function (event) {
+                        currentPage = 0;
+                        $table.trigger('repaginate');
+                        $($(".pageNum")[2]).addClass('active').siblings().removeClass('active');
+                    }).appendTo(pagination).addClass('clickable');
+// [이전]
+                    $('<span class="pageNum back"> 이전 </span>').bind('click', {newPage: page}, function (event) {
+                        if (currentPage == 0) return;
+                        currentPage = currentPage - 1;
+                        $table.trigger('repaginate');
+                        $($(".pageNum")[(currentPage - nowp) + 2]).addClass('active').siblings().removeClass('active');
+                    }).appendTo(pagination).addClass('clickable');
+// [1,2,3,4,5,6,7,8]
+                    for (var page = nowp; page < endp; page++) {
+                        $('<span class="pageNum"></span>').text(page + 1).bind('click', {newPage: page}, function (event) {
+                            currentPage = event.data['newPage'];
+                            $table.trigger('repaginate');
+                            $($(".pageNum")[(currentPage - nowp) + 2]).addClass('active').siblings().removeClass('active');
+                        }).appendTo(pagination).addClass('clickable');
+                    }
+// [다음]
+                    $('<span class="pageNum next"> 다음 </span>').bind('click', {newPage: page}, function (event) {
+                        if (currentPage == numPages - 1) return;
+                        currentPage = currentPage + 1;
+                        $table.trigger('repaginate');
+                        $($(".pageNum")[(currentPage - nowp) + 2]).addClass('active').siblings().removeClass('active');
+                    }).appendTo(pagination).addClass('clickable');
+// [끝]
+                    $('<span class="pageNum last">끝</span>').bind('click', {newPage: page}, function (event) {
+                        currentPage = numPages - 1;
+                        $table.trigger('repaginate');
+                        $($(".pageNum")[endp - nowp + 1]).addClass('active').siblings().removeClass('active');
+                    }).appendTo(pagination).addClass('clickable');
+                    $($(".pageNum")[2]).addClass('active');
+                });
+                $pager.insertAfter($table).find('span.pageNum:first').next().next().addClass('active');
+                $pager.appendTo(pagination);
+                $table.trigger('repaginate');
+            });
+        }
+
+        $(function () {
+// table pagination
+            page();
+        });
+        var selectBoxChange = function (value) {
+            var today = new Date()
+            var years = today.getFullYear()
+            var month = today.getMonth() + 1 >= 10 ? today.getMonth() + 1 : +"0" + String(today.getMonth() + 1)
+            var day = today.getDate() + 1 >= 10 ? today.getDate() + 1 : +"0" + String(today.getDate() + 1)
+            var end_date = years + "-" + month + "-" + day
+            if (value == '1W') {
+                var start_day = today.setDate(today.getDate() - 7)
+                var years = today.getFullYear()
+                var month = today.getMonth() + 1 >= 10 ? today.getMonth() + 1 : +"0" + String(today.getMonth() + 1)
+                var day = today.getDate() + 1 >= 10 ? today.getDate() + 1 : +"0" + String(today.getDate() + 1)
+                var date = years + "-" + month + "-" + day
+                $("#start_time").val(date)
+                $("#end_time").val(end_date)
+            } else if (value == '1M') {
+                var start_day = today.setMonth(today.getMonth() - 1)
+                var years = today.getFullYear()
+                var month = today.getMonth() + 1 >= 10 ? today.getMonth() + 1 : +"0" + String(today.getMonth() + 1)
+                var day = today.getDate() + 1 >= 10 ? today.getDate() + 1 : +"0" + String(today.getDate() + 1)
+                var date = years + "-" + month + "-" + day
+                $("#start_time").val(date)
+                $("#end_time").val(end_date)
+            } else if (value == '3M') {
+                var start_day = today.setMonth(today.getMonth() - 3)
+                var years = today.getFullYear()
+                var month = today.getMonth() + 1 >= 10 ? today.getMonth() + 1 : +"0" + String(today.getMonth() + 1)
+                var day = today.getDate() + 1 >= 10 ? today.getDate() + 1 : +"0" + String(today.getDate() + 1)
+                var date = years + "-" + month + "-" + day
+                $("#start_time").val(date)
+                $("#end_time").val(end_date)
+            } else if (value == '6M') {
+                var start_day = today.setMonth(today.getMonth() - 6)
+                var years = today.getFullYear()
+                var month = today.getMonth() + 1 >= 10 ? today.getMonth() + 1 : +"0" + String(today.getMonth() + 1)
+                var day = today.getDate() + 1 >= 10 ? today.getDate() + 1 : +"0" + String(today.getDate() + 1)
+                var date = years + "-" + month + "-" + day
+                $("#start_time").val(date)
+                $("#end_time").val(end_date)
+            } else {
+                $("#start_time").remove()
+                $("#end_time").remove()
+            }
+
+        }
+    </script>
+{% endblock %}

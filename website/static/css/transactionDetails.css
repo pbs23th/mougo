@@ -1,0 +1,502 @@
+* {
+    font-family: Roboto;
+    color: #292929;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+*:focus {
+    outline: none;
+}
+
+html {
+    background-color: #fff;
+    position: relative;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0px auto;
+    background-color: #fff;
+    position: relative;
+}
+
+#warp {
+    padding: 0px 16px;
+    padding-bottom: 200px;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    background-color: #fff;
+    margin: 0px;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+p, span {
+    margin: 0px;
+    padding: 0px;
+}
+
+a:link {
+    color: #292929;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #292929;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #292929;
+    text-decoration: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.container {
+    padding-top: 60px;
+    max-width: 1000px;
+    margin: 0px auto;
+}
+
+.container .title_flex {
+    margin-bottom: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.container .title_flex img {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.container .title_flex .transactionTitle {
+    font-size: 24px;
+    line-height: normal;
+}
+
+.container .title_flex .transactionTitle span {
+    font-weight: bold;
+}
+
+.container .conditionBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.container .conditionBox .coinSelect label {
+    margin-right: 14px;
+}
+
+.container .conditionBox .coinSelect select {
+    width: 100px;
+    height: 26px;
+    border-style: none;
+    border: 1px solid #6B6D76;
+    color: #6B6D76;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .conditionBox .dateBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.container .conditionBox .dateBox label {
+    margin-right: 14px;
+}
+
+.container .conditionBox .dateBox select {
+    width: 100px;
+    height: 26px;
+    border-style: none;
+    border: 1px solid #6B6D76;
+    color: #6B6D76;
+    border-radius: 5px;
+    margin-right: 14px;
+    cursor: pointer;
+}
+
+.container .conditionBox .dateBox .dateChoice input {
+    width: 120px;
+    height: 26px;
+    border-style: none;
+    border: 1px solid #6B6D76;
+    color: #6B6D76;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.container .conditionBox .dateBox button {
+    width: 60px;
+    height: 26px;
+    border-style: none;
+    color: #6B6D76;
+    border-radius: 5px;
+    background-color: #7699D4;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 14px;
+    cursor: pointer;
+}
+
+.container .non_list {
+    width: 100%;
+    height: auto;
+    background-color: #F9FBFF;
+    padding: 20px 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 3px 5px -1px #cecece;
+    box-shadow: 0px 3px 5px -1px #cecece;
+}
+
+.container .non_list .programTitle_w {
+    display: inline-block;
+    font-size: 16px;
+    line-height: normal;
+    margin-right: 40px;
+}
+
+.container .non_list .programTitle_m {
+    display: none;
+}
+
+.container .non_list div p {
+    color: #808080;
+    font-weight: bold;
+}
+
+.container .programBox {
+    width: 100%;
+    height: auto;
+    background-color: #F9FBFF;
+    padding: 20px 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 3px 5px -1px #cecece;
+    box-shadow: 0px 3px 5px -1px #cecece;
+}
+
+.container .programBox .programTitle_w {
+    margin-bottom: 8px;
+}
+
+
+.container .programBox .contentFlex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.container .programBox .contentFlex .contentBox {
+    width: 198px;
+    height: 100%;
+    display: inline-block;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0;
+}
+
+.container .programBox .contentFlex .contentBox .title {
+    display: block;
+    color: #808080;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: right;
+}
+
+.container .programBox .contentFlex .contentBox .content {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container .programBox .contentFlex .line {
+    width: 1px;
+    height: 60px;
+    background-color: #7699D4;
+    margin: 0px 30px;
+}
+
+.container .tableBox .web_table {
+    width: 100%;
+    border-spacing: 0px;
+    border: 1px solid #BEBEBE;
+    border-bottom: 0px;
+}
+
+.container .tableBox .web_table tr th {
+    background-color: #F2F2F2;
+    height: 30px;
+    border-bottom: 1px solid #BEBEBE;
+}
+
+.container .tableBox .web_table tr td {
+    text-align: center;
+    height: 40px;
+    border-right: 1px solid #BEBEBE;
+    border-bottom: 1px solid #BEBEBE;
+}
+
+.container .tableBox .mobile_table {
+    display: none;
+}
+
+.container .tableBox .pageNumber {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.container .tableBox .pageNumber img {
+    margin: 0px 10px 0px 0px;
+    cursor: pointer;
+}
+
+.container .tableBox .pageNumber .textBox {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .container .conditionBox {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .container .conditionBox .coinSelect {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .container .conditionBox .coinSelect label {
+        width: 15%;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 62px;
+        flex: 1 1 62px;
+    }
+
+    .container .conditionBox .coinSelect select {
+        width: 85%;
+    }
+
+    .container .conditionBox .dateBox {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .container .conditionBox .dateBox .dateSelect {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .container .conditionBox .dateBox .dateSelect label {
+        width: 15%;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 62px;
+        flex: 1 1 62px;
+    }
+
+    .container .conditionBox .dateBox .dateSelect select {
+        width: 85%;
+        margin-right: 0px;
+    }
+
+    .container .conditionBox .dateBox .dateChoice {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .container .conditionBox .dateBox .dateChoice input {
+        width: 46%;
+    }
+
+    .container .conditionBox .dateBox .dateChoice span {
+        width: 10px;
+        display: inline-block;
+    }
+
+    .container .conditionBox .dateBox button {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .container .programBox {
+    }
+
+    .container .programBox .programTitle_w {
+    }
+
+    .container .programBox .contentFlex {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 30px 0px;
+    }
+
+    .container .programBox .contentFlex .contentBox {
+        width: 100%;
+    }
+
+    .container .programBox .contentFlex .contentBox .title {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .container .programBox .contentFlex .contentBox .content {
+        text-align: right;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .container .programBox .contentFlex .line {
+        width: 100%;
+        height: 1px;
+        margin: 20px 0px;
+    }
+
+    .container .tableBox .web_table {
+        display: none;
+    }
+
+    .container .tableBox .mobile_table {
+        display: block;
+    }
+
+    .container .tableBox .mobile_table .transactionDetails .table_title {
+        height: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        background-color: #E9EAEC;
+        padding: 8px;
+        margin-bottom: 8px;
+        margin-top: 20px;
+        border: 1px solid #BEBEBE;
+    }
+
+    .container .tableBox .mobile_table .transactionDetails .table_title div {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .container .tableBox .mobile_table .transactionDetails .table_title p {
+        font-size: 16px;
+        color: #6B6D76;
+    }
+
+    .container .tableBox .mobile_table .transactionDetails .table_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .container .tableBox .mobile_table .transactionDetails .table_content p {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 0px;
+        flex: 1 1 0;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin: 6px 0px 0px 0px;
+    }
+
+    .container .tableBox .mobile_table .transactionDetails .table_content .table_content_title {
+        font-size: 14px;
+        color: #6B6D76;
+        width: 60px;
+    }
+
+    .container .tableBox .mobile_table .transactionDetails .table_content .table_content_content {
+        text-align: right;
+        font-size: 14px;
+        color: #6B6D76;
+        font-weight: bold;
+    }
+
+    .container .tableBox .pageNumber {
+        margin-top: 40px;
+    }
+}

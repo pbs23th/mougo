@@ -1,0 +1,317 @@
+{% extends "base.html" %}  {% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>단타 프로그램</title>
+
+        <!-- base -->
+        <link rel="stylesheet" href="../static/css/nav.css">
+        <link rel="stylesheet" href="../static/css/footer.css">
+
+        <!-- m_nav -->
+        <link rel="stylesheet" href="../static/css/menu/menu.css">
+        <link rel="stylesheet" href="../static/css/menu/reset.css">
+
+        <link rel="stylesheet" href="../static/css/apiSetting.css">
+
+        <!-- popup -->
+        <link rel="stylesheet" href="../static/css/popup/needpopup.min.css">
+        <link rel="stylesheet" href="../static/css/popup.css">
+
+    </head>
+
+    <body>
+
+    <div id="warp">
+        <div class="container">
+
+            <div class="api_flexBox">
+
+                <div class="api_currentSituation">
+                    <p class="title"><span>{{ username }}</span>님 API 등록 현황</p>
+                    <p class="subTitle">현재 서비스 내 저장된 API 정보입니다.</p>
+
+                    <!-- 내용 없을 시 -->
+                    <!-- <div class="api_list_none">
+                        <p>API를 설정해주세요.</p>
+                    </div> -->
+                    <button class="homeButton" onClick="location.href='/home'">홈으로 바로가기</button>
+
+                    <!-- 내용 있을 시 -->
+
+                    {% for i in  api_key %}
+                        <div class="api_list">
+                            <div class="api_content_1">
+                                <div class="exchange_name">
+                                    <p><img src="../static/images/apiSetting/{{ i['exchange'] }}_logo.png" width="40px"
+                                            height="40px"></p>
+                                    <div id='bot_index'>
+                                        <p style="font-weight: bold;">{{ i.id }}</p>
+                                        <p style="color: #808080;">{{ i['exchange'] }}</p>
+                                    </div>
+                                </div>
+                                <div class="buttonBox">
+                                    <button class="change" data-needpopup-show="#popup_UPBIT_change">변경</button>
+                                    <button class="delete" data-needpopup-show="#popup_api_delete"
+                                            onclick="delete_confirm(this.value)" value="{{ i.id }}">삭제
+                                    </button>
+                                </div>
+                            </div>
+
+                            <hr style="border: 0.5px solid #E9EAEC;margin: 20px 0px;">
+
+                            <div class="api_content_2">
+                                <div class="apiKeyBox">
+                                    <div><span class="title">API Key</span></div>
+                                    <div><span class="content">{{ i['access_key'] }}</span></div>
+                                </div>
+
+                                <div class="secretKeyBox">
+                                    <div><span class="title">Secret Key</span></div>
+                                    <div><span class="content">{{ i['secret_key'] }}</span></div>
+                                </div>
+                                {% if i['passphrase'] != "" %}
+                                <div class="passphraseBox">
+                                    <div><span class="title">passphrase</span></div>
+                                    <div><span class="content">{{ i['passphrase'] }}</span></div>
+                                </div>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+
+                    <div class="popup"></div>
+
+                </div>
+
+
+                <div class="api_setting">
+                    <p class="title">API 설정</p>
+
+                    <label>API Key를 입력하기 전 거래소를 선택해주세요.</label>
+                    <p class="announcement">※ 업비트 API 추가 시 “221.168.38.191” IP를 추가해주세요.</p>
+                    <select name="exchange" id="exchange" onchange="handleOnChange(this)">
+                        <option>거래소를 선택해주세요.</option>
+                        <option value="OKEX">오케이엑스(OKEX)</option>
+                        <option value="UPBIT">업비트(UPBIT)</option>
+                        <option value="BITMEX">비트맥스(BITMEX)</option>
+                    </select>
+
+
+                    <label style="margin-bottom: 20px; margin-top: 40px;">API Key</label>
+                    <input type="text" placeholder="Access Key" class="accessKey" id="accessKey"/>
+                    <input type="text" placeholder="Secret Key" class="secretKey" id="secretKey"/>
+                    <input type="text" placeholder="Passphrase" class="passphrase" id="passphrase"/>
+
+                    <button class="api_button" id="apikeysummit">API 인증</button>
+                </div>
+            </div>
+
+            <footer>
+                <img src="../static/images/logo/bulligo_footer_logo.svg" width="34px" height="34px">
+            </footer>
+        </div>
+
+    </div>
+
+
+    <!--     팝업-->
+    <!--     OKEX 변경-->
+    <div id='popup_OKEX_change' class="needpopup">
+        <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+        <p class="title">변경하실 API를 입력해주세요.</p>
+        <p class="subTitle">선택하신 API가 맞는지 다시 한번 확인해주세요.</p>
+
+        <p class="api_title">오케이엑스 (OKEX) API Key</p>
+
+        <input type="text" placeholder="Access Key">
+        <input type="text" placeholder="Secret Key">
+        <input type="text" placeholder="Passphrase">
+
+        <div class="buttonBox">
+            <button class="cancle_button remove">취소</button>
+            <button class="api_button">API 인증</button>
+        </div>
+    </div>
+
+    <!--     UPBIT 변경-->
+    <div id='popup_UPBIT_change' class="needpopup">
+        <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+        <p class="title">변경하실 API를 입력해주세요.</p>
+        <p class="subTitle">선택하신 API가 맞는지 다시 한번 확인해주세요.</p>
+
+        <p class="api_title">업비트 (UPBIT) API Key</p>
+
+        <input type="text" placeholder="Access Key">
+        <input type="text" placeholder="Secret Key">
+
+        <div class="buttonBox">
+            <button class="cancle_button remove">취소</button>
+            <button class="api_button">API 인증</button>
+        </div>
+    </div>
+
+    <!--     BITMEX 변경-->
+    <div id='popup_BITMEX_change' class="needpopup">
+        <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+        <p class="title">변경하실 API를 입력해주세요.</p>
+        <p class="subTitle">선택하신 API가 맞는지 다시 한번 확인해주세요.</p>
+
+        <p class="api_title">비트맥스 (BITMEX) API Key</p>
+
+        <input type="text" placeholder="Access Key">
+        <input type="text" placeholder="Secret Key">
+
+        <div class="buttonBox">
+            <button class="cancle_button remove">취소</button>
+            <button class="api_button">API 인증</button>
+        </div>
+    </div>
+    <!-- api 삭제 -->
+    <div id='popup_api_delete' class="needpopup">
+        <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+        <p class="title">API를 삭제하시겠습니까?</p>
+        <p class="subTitle">선택하신 API가 맞는지 다시 한번 확인해주세요.</p>
+
+        <div class="buttonBox">
+            <button class="cancle_button remove">취소</button>
+            <button class="delete_button remove" onclick="delete_api()" id='delete_api_btn'>삭제하기</button>
+        </div>
+    </div>
+
+
+    <!-- api 인증 성공 -->
+    <div id='popup_api_failed' class="needpopup">
+        <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+        <p class="title">API 인증에 성공하였습니다.</p>
+
+        <div class="buttonBox">
+            <button class="cancle_button remove">취소</button>
+            <button class="delete_button">등록하기</button>
+        </div>
+    </div>
+
+    <!-- api 인증 실패 -->
+    <div id='popup_api_successful' class="needpopup">
+        <img src="../static/images/logo/bulligo_m_logo.svg" width="30px" height="30px">
+
+        <p class="title">API 인증에 실패하였습니다.</p>
+        <p class="subTitle">거래소와 API를 다시 한번 확인해주세요.</p>
+
+        <div class="buttonBox">
+            <button class="cancle_button remove">확인</button>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script type="text/javascript" src="../static/js/apiSetting.js"></script>
+    <script type="text/javascript" src="../static/js/menu/nav.js"></script>
+
+    <!-- popup JS -->
+    <script src="../static/js/popup/needpopup.js"></script>
+    <script src="../static/js/popup/needpopup.min.js"></script>
+    <script src="../static/js/popup/popup.js"></script>
+
+
+    </body>
+
+    </html>
+
+    <script>
+        $('#apikeysummit').on("click", function () {
+            var data = {
+                'accessKey': $('#accessKey').val(),
+                'secretKey': $('#secretKey').val(),
+                'passphrase': $('#passphrase').val(),
+                'exchange': $('#exchange').val()
+            };
+            exchange = $('#exchange').val()
+            if (exchange == 'OKEX') {
+                $.ajax({
+                    url: "/apisetting",
+                    method: "POST",
+                    data: data,
+                    error: function (error) {
+                        alert("인증실패!");
+                        location.reload();
+                    },
+                    success: function (data) {
+                        alert("인증완료!");
+                        location.reload();
+                    },
+
+                })
+            } else if (exchange == 'UPBIT') {
+                $.ajax({
+                    url: "/apisetting",
+                    method: "POST",
+                    data: data,
+                    error: function (error) {
+                        alert("인증실패!");
+                        location.reload();
+                    },
+                    success: function (data) {
+                        alert("인증완료!");
+                        location.reload();
+                    },
+
+                })
+            } else {
+                $.ajax({
+                    url: "/apisetting",
+                    method: "POST",
+                    data: data,
+                    error: function (error) {
+                        alert("인증실패!");
+                        location.reload();
+                    },
+                    success: function (data) {
+                        alert("인증완료!");
+                        location.reload();
+                    },
+
+                })
+            }
+        })
+
+        function delete_confirm(idx) {
+            $('#delete_api_btn').val(idx)
+            console.log(idx)
+            console.log($('[name="delete_api_btn"]').attr("id", idx))
+        }
+
+        var delete_api = function () {
+            api_num = $('#delete_api_btn').val()
+            $.ajax({
+                url: "/apisetting",
+                method: "DELETE",
+                data: {'index': api_num},
+                error: function (error) {
+                    alert("삭제 실패");
+                },
+                success: function (data) {
+                    alert("삭제 완료!");
+                    location.reload();
+                },
+
+            })
+        }
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block title %}login{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <div id="warp">
+        <div class="container">
+
+            <div class="login_imgBox">
+                <img src="../static/images/login/login_human.svg" width="100px" height="100px">
+            </div>
+
+            <div class="login_inputBox">
+                <div class="form-group input_positionBox">
+                    <img src="../static/images/login/login_id.svg" width="60px" height="48px">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="email 을 입력해주세요.">
+                </div>
+
+                <div class="form-group input_positionBox">
+                    <img src="../static/images/login/login_pw.svg" width="60px" height="48px">
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="패스워드를 입력해주세요.">
+                </div>
+
+                <div class="buttonBox">
+                    <button type="submit" class="login_button">로그인</button>
+                </div>
+                <div class="buttonBox">
+                    <button type="button" class="login_button" onclick="window.location.href='sign_up'">회원가입</button>
+                </div>
+            </div>
+
+            <div class="bulligo_banner_box">
+                <img src="../static/images/login/bulligo_web_banner.png" width="570px" height="96px" class="web_banner">
+                <img src="../static/images/login/bulligo_mobile_banner.png" width="320px" height="96px"
+                    class="mobile_banner">
+            </div>
+
+            <footer>
+                <img src="../static/images/logo/bulligo_footer_logo.svg" width="34px" height="34px">
+            </footer>
+
+        </div>
+
+
+    </div>
+    <nav class="mobile_bottom_nav">
+        <img src="../static/images/nav/mobile_bottom_nav_home.svg" width="40px" height="40px">
+    </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/menu/nav.js"></script>
+
+</form>
+{% endblock %}

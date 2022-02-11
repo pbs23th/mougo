@@ -1,0 +1,249 @@
+@import 'base/style', 'base/default';
+
+.container {
+    padding-top: 60px;
+    max-width: 1000px;
+    margin: 0px auto;
+
+    .api_flexBox {
+        display: flex;
+        justify-content: space-between;
+
+        .api_currentSituation {
+            margin-right: 20px;
+
+            .title {
+                font-size: 24px;
+                margin-bottom: 12px;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            .subTitle {
+                font-size: 16px;
+                color: #808080;
+            }
+
+            .api_list_none {
+                width: 420px;
+                height: 48px;
+                border: 2px solid $danta-color;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 30px;
+
+                p {
+                    color: #808080;
+                }
+            }
+
+            .api_list {
+                width: 420px;
+                height: auto;
+                border: 2px solid $danta-color;
+                border-radius: 5px;
+                margin-top: 30px;
+                padding: 20px;
+
+                .api_content_1 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .exchange_name {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    p {
+                        margin-right: 8px;
+                    }
+
+                    .buttonBox {
+                        button {
+                            width: 60px;
+                            height: 40px;
+                            border-style: none;
+                            font-size: 16px;
+                            font-weight: bold;
+                            border-radius: 5px;
+                            color: #fff;
+                            cursor: pointer;
+                        }
+                        
+                        .change {
+                            background-color: #7699D4;
+                            margin-right: 8px;
+                        }
+
+                        .delete {
+                            background-color: #808080;
+                        }
+                    }
+                }
+
+                .api_content_2 {
+                    width: 100%;
+                    font-size: 13px;
+
+                    .apiKeyBox, .secretKeyBox, .passphraseBox {
+                        display: flex;
+                        width: 100%;
+
+                        div {
+                            display: inline-block;
+                        }
+
+                    }
+
+                    .title {
+                        width: 80px;
+                        display: inline-block;
+                        font-size: 13px;
+                        font-weight: bold;
+                        color: #808080;
+                        margin-bottom: 8px;
+                    }
+
+                    .content {
+                        text-align: left;
+                        word-break: break-all;
+                    }
+                }
+            }
+        }
+
+        .api_setting {
+
+            .title {
+                font-size: 24px;
+                margin-bottom: 12px;
+                font-weight: bold;
+            }
+
+            label {
+                display: inline-block;
+                font-size: 16px;
+                color: #808080;
+            }
+
+            select {
+                display: block;
+                width: 420px;
+                height: 48px;
+                border-style: none;
+                border: 1px solid #808080;
+                border-radius: 5px;
+                margin-top: 30px;
+                color: #808080;
+                padding-left: 8px;
+                // margin-bottom: 60px;
+            }
+
+            .announcement {
+                font-size: 14px;
+                color: #FF0000;
+                margin-top: 4px;
+                display: none;
+            }
+
+            input {
+                display: block;
+                width: 420px;
+                height: 40px;
+                margin-bottom: 12px;
+                border-style: none;
+                border-bottom: 1px solid #808080;
+            }
+
+            input::placeholder {
+                color: #C0C0C0;
+                font-size: 16px;
+            }
+
+            .api_button {
+                width: 420px;
+                height: 48px;
+                border-style: none;
+                margin-top: 40px;
+                background-color: $danta-color;
+                font-size: 16px;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@include tablet_900 {
+    .container {
+    
+        .api_flexBox {
+
+            .api_currentSituation {
+                width: 50%;
+    
+                .api_list {
+                    width: 100%;
+                }
+            }
+    
+            .api_setting {
+                width: 50%;
+    
+                select {
+                    width: 100%;
+                }
+    
+                input {
+                    width: 100%;
+                }
+    
+                .api_button {
+                    width: 100%;
+                }
+            }
+        }
+    } 
+}
+
+@include tablet_768 {
+    .container {
+        padding-top: 40px;
+    
+        .api_flexBox {
+            flex-direction: column;
+
+            .api_currentSituation {
+                width: 100%;
+                margin-bottom: 40px;
+    
+                .api_list {
+                    width: 100%;
+                }
+            }
+    
+            .api_setting {
+                width: 100%;
+    
+                select {
+                    width: 100%;
+                }
+    
+                input {
+                    width: 100%;
+                }
+    
+                .api_button {
+                    width: 100%;
+                }
+            }
+        }
+    } 
+}
