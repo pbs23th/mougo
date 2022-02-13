@@ -16,6 +16,7 @@ class Api_key(db.Model):
     exchange = db.Column(db.String(45))
     access_key = db.Column(db.String(150), unique=True)
     secret_key = db.Column(db.String(150))
+    passphrase = db.Column(db.String(45))
     user_id = db.Column(db.Integer)
 
 ''' okex '''
@@ -36,48 +37,48 @@ class okex_instrument(db.Model):
     tickSz = db.Column(db.String(45))
 
 
-
-''' buyintervalset '''
-class Okex_buyintervalset(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    buy_1 = db.Column(db.Float)
-    buy_2 = db.Column(db.Float)
-    buy_3 = db.Column(db.Float)
-    buy_4 = db.Column(db.Float)
-    buy_5 = db.Column(db.Float)
-    buy_6 = db.Column(db.Float)
-    buy_7 = db.Column(db.Float)
-    buy_8 = db.Column(db.Float)
-    buy_9 = db.Column(db.Float)
-    userid = db.Column(db.Integer)
-
-
-class Upbit_buyintervalset(db.Model):
-    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
-    buy_1 = db.Column(db.Float)
-    buy_2 = db.Column(db.Float)
-    buy_3 = db.Column(db.Float)
-    buy_4 = db.Column(db.Float)
-    buy_5 = db.Column(db.Float)
-    buy_6 = db.Column(db.Float)
-    buy_7 = db.Column(db.Float)
-    buy_8 = db.Column(db.Float)
-    buy_9 = db.Column(db.Float)
-    userid = db.Column(db.Integer)
-
-
-class bitmex_buyintervalset(db.Model):
-    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
-    buy_1 = db.Column(db.Float)
-    buy_2 = db.Column(db.Float)
-    buy_3 = db.Column(db.Float)
-    buy_4 = db.Column(db.Float)
-    buy_5 = db.Column(db.Float)
-    buy_6 = db.Column(db.Float)
-    buy_7 = db.Column(db.Float)
-    buy_8 = db.Column(db.Float)
-    buy_9 = db.Column(db.Float)
-    userid = db.Column(db.Integer)
+#
+# ''' buyintervalset '''
+# class Okex_buyintervalset(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#     buy_1 = db.Column(db.Float)
+#     buy_2 = db.Column(db.Float)
+#     buy_3 = db.Column(db.Float)
+#     buy_4 = db.Column(db.Float)
+#     buy_5 = db.Column(db.Float)
+#     buy_6 = db.Column(db.Float)
+#     buy_7 = db.Column(db.Float)
+#     buy_8 = db.Column(db.Float)
+#     buy_9 = db.Column(db.Float)
+#     userid = db.Column(db.Integer)
+#
+#
+# class Upbit_buyintervalset(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
+#     buy_1 = db.Column(db.Float)
+#     buy_2 = db.Column(db.Float)
+#     buy_3 = db.Column(db.Float)
+#     buy_4 = db.Column(db.Float)
+#     buy_5 = db.Column(db.Float)
+#     buy_6 = db.Column(db.Float)
+#     buy_7 = db.Column(db.Float)
+#     buy_8 = db.Column(db.Float)
+#     buy_9 = db.Column(db.Float)
+#     userid = db.Column(db.Integer)
+#
+#
+# class bitmex_buyintervalset(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
+#     buy_1 = db.Column(db.Float)
+#     buy_2 = db.Column(db.Float)
+#     buy_3 = db.Column(db.Float)
+#     buy_4 = db.Column(db.Float)
+#     buy_5 = db.Column(db.Float)
+#     buy_6 = db.Column(db.Float)
+#     buy_7 = db.Column(db.Float)
+#     buy_8 = db.Column(db.Float)
+#     buy_9 = db.Column(db.Float)
+#     userid = db.Column(db.Integer)
 
 
 ''' orderhistory '''
@@ -161,69 +162,69 @@ class bitmex_ordidlist(db.Model):
     state = db.Column(db.String(45))
 
 
-
-''' 셋팅 '''
-class Okex_setting(db.Model):
-    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
-    apikey = db.Column(db.String(150))
-    secretkey = db.Column(db.String(150))
-    start_payment = db.Column(db.Float)
-    currency = db.Column(db.String(45))
-    botstatus = db.Column(db.Integer)
-    count = db.Column(db.Integer)
-    positionsell = db.Column(db.Float)
-    payment = db.Column(db.String(45))
-    loss_stop = db.Column(db.Float)
-    stoploss_onoff = db.Column(db.Float)
-    passphrase = db.Column(db.String(45))
-    brokerid = db.Column(db.String(45))
-    stepprice = db.Column(db.String(45))
-    unitformat = db.Column(db.String(45))
-    appointment = db.Column(db.Integer)
-    entry_position = db.Column(db.String(45))
-    userid = db.Column(db.Integer, unique=True)
-
-
-class Upbit_setting(db.Model):
-    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
-    apikey = db.Column(db.String(150))
-    secretkey = db.Column(db.String(150))
-    start_payment = db.Column(db.Float)
-    currency = db.Column(db.String(45))
-    botstatus = db.Column(db.Integer)
-    count = db.Column(db.Integer)
-    positionsell = db.Column(db.Float)
-    payment = db.Column(db.String(45))
-    loss_stop = db.Column(db.Float)
-    stoploss_onoff = db.Column(db.Float)
-    passphrase = db.Column(db.String(45))
-    brokerid = db.Column(db.String(45))
-    stepprice = db.Column(db.String(45))
-    unitformat = db.Column(db.String(45))
-    appointment = db.Column(db.Integer)
-    entry_position = db.Column(db.String(45))
-    userid = db.Column(db.Integer, unique=True)
-
-
-class bitmex_setting(db.Model):
-    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
-    apikey = db.Column(db.String(150))
-    secretkey = db.Column(db.String(150))
-    start_payment = db.Column(db.Float)
-    currency = db.Column(db.String(45))
-    botstatus = db.Column(db.Integer)
-    count = db.Column(db.Integer)
-    positionsell = db.Column(db.Float)
-    payment = db.Column(db.String(45))
-    loss_stop = db.Column(db.Float)
-    stoploss_onoff = db.Column(db.Float)
-    passphrase = db.Column(db.String(45))
-    brokerid = db.Column(db.String(45))
-    stepprice = db.Column(db.String(45))
-    unitformat = db.Column(db.String(45))
-    appointment = db.Column(db.Integer)
-    entry_position = db.Column(db.String(45))
-    userid = db.Column(db.Integer, unique=True)
+#
+# ''' 셋팅 '''
+# class Okex_setting(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
+#     apikey = db.Column(db.String(150))
+#     secretkey = db.Column(db.String(150))
+#     start_payment = db.Column(db.Float)
+#     currency = db.Column(db.String(45))
+#     botstatus = db.Column(db.Integer)
+#     count = db.Column(db.Integer)
+#     positionsell = db.Column(db.Float)
+#     payment = db.Column(db.String(45))
+#     loss_stop = db.Column(db.Float)
+#     stoploss_onoff = db.Column(db.Float)
+#     passphrase = db.Column(db.String(45))
+#     brokerid = db.Column(db.String(45))
+#     stepprice = db.Column(db.String(45))
+#     unitformat = db.Column(db.String(45))
+#     appointment = db.Column(db.Integer)
+#     entry_position = db.Column(db.String(45))
+#     userid = db.Column(db.Integer, unique=True)
+#
+#
+# class Upbit_setting(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
+#     apikey = db.Column(db.String(150))
+#     secretkey = db.Column(db.String(150))
+#     start_payment = db.Column(db.Float)
+#     currency = db.Column(db.String(45))
+#     botstatus = db.Column(db.Integer)
+#     count = db.Column(db.Integer)
+#     positionsell = db.Column(db.Float)
+#     payment = db.Column(db.String(45))
+#     loss_stop = db.Column(db.Float)
+#     stoploss_onoff = db.Column(db.Float)
+#     passphrase = db.Column(db.String(45))
+#     brokerid = db.Column(db.String(45))
+#     stepprice = db.Column(db.String(45))
+#     unitformat = db.Column(db.String(45))
+#     appointment = db.Column(db.Integer)
+#     entry_position = db.Column(db.String(45))
+#     userid = db.Column(db.Integer, unique=True)
+#
+#
+# class bitmex_setting(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
+#     apikey = db.Column(db.String(150))
+#     secretkey = db.Column(db.String(150))
+#     start_payment = db.Column(db.Float)
+#     currency = db.Column(db.String(45))
+#     botstatus = db.Column(db.Integer)
+#     count = db.Column(db.Integer)
+#     positionsell = db.Column(db.Float)
+#     payment = db.Column(db.String(45))
+#     loss_stop = db.Column(db.Float)
+#     stoploss_onoff = db.Column(db.Float)
+#     passphrase = db.Column(db.String(45))
+#     brokerid = db.Column(db.String(45))
+#     stepprice = db.Column(db.String(45))
+#     unitformat = db.Column(db.String(45))
+#     appointment = db.Column(db.Integer)
+#     entry_position = db.Column(db.String(45))
+#     userid = db.Column(db.Integer, unique=True)
 
 
 class bot_setting(db.Model):
@@ -246,3 +247,17 @@ class bot_setting(db.Model):
     entry_position = db.Column(db.String(45))
     userid = db.Column(db.Integer, unique=True)
     bot_id = db.Column(db.Integer, unique=True)
+
+
+class buyintervalset(db.Model):
+    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
+    buy_1 = db.Column(db.Float)
+    buy_2 = db.Column(db.Float)
+    buy_3 = db.Column(db.Float)
+    buy_4 = db.Column(db.Float)
+    buy_5 = db.Column(db.Float)
+    buy_6 = db.Column(db.Float)
+    buy_7 = db.Column(db.Float)
+    buy_8 = db.Column(db.Float)
+    buy_9 = db.Column(db.Float)
+    bot_id = db.Column(db.Integer)

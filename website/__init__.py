@@ -30,7 +30,7 @@ def create_app():
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(bitmex, url_prefix='/')
 
-    from .models import User, Upbit_setting, Upbit_buyintervalset, Okex_setting, Okex_buyintervalset, okex_orderhistory, \
+    from .models import User, okex_orderhistory, \
         okex_instrument, okex_ordidlist, upbit_orderhistory, upbit_ordidlist
     create_database(app)
 

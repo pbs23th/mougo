@@ -56,55 +56,6 @@ def sign_up():
             new_User = User(email = email, username=username, password=generate_password_hash(password, method='sha256'))
             db.session.add(new_User)
             db.session.commit()
-            print('----',email)
-            insert_user_data(email)
             flash('회원가입 성공.', category='success')
             return redirect(url_for("views.home"))
     return render_template('sign_up.html', user=current_user)
-
-def insert_user_data(email):
-    connection = sqlsetting.mysqlset()
-    my_cursor = connection.cursor(pymysql.cursors.DictCursor)
-    sql = '''select id from trade.user where email = %s'''
-    my_cursor.execute(sql, email)
-    select_data = my_cursor.fetchone()
-    connection.commit()
-
-    my_cursor = connection.cursor(pymysql.cursors.DictCursor)
-    sql = '''insert into trade.okex_buyintervalset(buy_1,buy_2,buy_3,buy_4,buy_5,buy_6,buy_7,buy_8,buy_9, userid) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-    my_cursor.execute(sql, (0.5,0.6,0.7,0.8,0.9,1.0,1.1,1.2,1.3, select_data['id']))
-    connection.commit()
-    #
-    my_cursor = connection.cursor(pymysql.cursors.DictCursor)
-    sql = '''insert into trade.upbit_buyintervalset(buy_1,buy_2,buy_3,buy_4,buy_5,buy_6,buy_7,buy_8,buy_9, userid) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-    my_cursor.execute(sql, (0.5,0.6,0.7,0.8,0.9,1.0,1.1,1.2,1.3, select_data['id']))
-    connection.commit()
-
-    my_cursor = connection.cursor(pymysql.cursors.DictCursor)
-    sql = '''insert into trade.bitmex_buyintervalset(buy_1,buy_2,buy_3,buy_4,buy_5,buy_6,buy_7,buy_8,buy_9, userid) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-    my_cursor.execute(sql, (0.5,0.6,0.7,0.8,0.9,1.0,1.1,1.2,1.3, select_data['id']))
-    connection.commit()
-
-    my_cursor = connection.cursor(pymysql.cursors.DictCursor)
-    sql = '''insert into trade.okex_setting(apikey,secretkey,start_payment,currency,botstatus,count,positionsell,payment, loss_stop,
-     stoploss_onoff, passphrase, brokerid, stepprice, unitformat, appointment, userid) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-    my_cursor.execute(sql, (str(0), str(0), float(10), str('BTC'), int(0), int(5), float(0.5), str('USDT'), float(0), int(0), str(0), str('e7c64c9dec0944BC'), str(0), str(0), int(0), select_data['id']))
-    connection.commit()
-
-    my_cursor = connection.cursor(pymysql.cursors.DictCursor)
-    sql = '''insert into trade.upbit_setting(apikey,secretkey,start_payment,currency,botstatus,count,positionsell,payment,loss_stop,
-     stoploss_onoff, appointment, userid) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-    my_cursor.execute(sql, (str(0), str(0), float(10000), str('BTC'), int(0), int(5), float(0.5), str('KRW'), float(0), int(0), int(0), select_data['id']))
-    connection.commit()
-
-    my_cursor = connection.cursor(pymysql.cursors.DictCursor)
-    sql = '''insert into trade.bitmex_setting(apikey,secretkey,start_payment,currency,botstatus,count,positionsell,payment, entry_position, loss_stop, stoploss_onoff, appointment, userid) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-    my_cursor.execute(sql, (str(0), str(0), float(100), str('XBTUSD'), int(0), int(5), float(0.5), str('XBT'), str("long"), float(0), int(0), int(0), select_data['id']))
-    connection.commit()
-
-
-
-
-
-    connection.close()
-    return 200

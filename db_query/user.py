@@ -46,17 +46,21 @@ def update_api_key(number):
         return None
 
 
-def insert_api_key(user_id,  exchange, accessKey, secretKey,passphrase='0'):
+def insert_api_key(user_id, exchange, accessKey, secretKey, passphrase='0'):
     try:
+        print(user_id, exchange, accessKey, secretKey)
+        print('insert_api_key 1')
         connection = sqlsetting.mysqlset()
         my_cursor = connection.cursor(pymysql.cursors.DictCursor)
         sql = '''insert into trade.api_key(user_id, exchange, access_key, secret_key, passphrase) value(%s, %s, %s, %s, %s)'''
-        my_cursor.execute(sql, (user_id,exchange, accessKey, secretKey, passphrase))
+        my_cursor.execute(sql, (user_id, exchange, accessKey, secretKey, passphrase))
+        print('insert_api_key 2')
         connection.commit()
         connection.close()
         return 'seccess'
     except Exception as e:
-        return None
+        print(e)
+        return 'error'
 
 
 def select_api_key(user_id):
@@ -74,7 +78,6 @@ def select_api_key(user_id):
         return None
 
 
-
 def insert_user_data(data):
     exchange = data['exchange']
     start_payment = 1000
@@ -83,6 +86,8 @@ def insert_user_data(data):
     positionsell = 0.5
     loss_stop = 0
     stoploss_onoff = 0
+    passphrase = '0'
+    brokerid = 'sdfsdgsdfsf'
     appointment = 0
     entry_position = 'long'
     bot_id = data['id']
@@ -100,12 +105,14 @@ def insert_user_data(data):
     connection = sqlsetting.mysqlset()
     my_cursor = connection.cursor(pymysql.cursors.DictCursor)
     sql = '''insert into trade.buyintervalset(buy_1,buy_2,buy_3,buy_4,buy_5,buy_6,buy_7,buy_8,buy_9, bot_id) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-    my_cursor.execute(sql, (0.5,0.6,0.7,0.8,0.9,1.0,1.1,1.2,1.3, bot_id))
+    my_cursor.execute(sql, (0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, bot_id))
     connection.commit()
 
     my_cursor = connection.cursor(pymysql.cursors.DictCursor)
-    sql = '''insert into trade.bot_setting(start_payment,currency,botstatus,count,positionsell,payment, entry_position, loss_stop, stoploss_onoff, appointment, bot_id) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-    my_cursor.execute(sql, (start_payment, currency, botstatus, count, positionsell, payment, entry_position, loss_stop, stoploss_onoff, appointment, bot_id))
+    sql = '''insert into trade.bot_setting(start_payment,currency,botstatus,count,positionsell,payment, entry_position, loss_stop, stoploss_onoff, passphrase, brokerid, appointment, bot_id) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'''
+    my_cursor.execute(sql, (
+    start_payment, currency, botstatus, count, positionsell, payment, entry_position, loss_stop, stoploss_onoff,
+    passphrase, brokerid, appointment, bot_id))
     connection.commit()
     connection.close()
     return 200
@@ -131,3 +138,14 @@ def buyintervalStatus(bot_id):
     connection.commit()
     connection.close()
     return select_data
+
+
+def select_bot(user_id):
+    connection = sqlsetting.mysqlset()
+    my_cursor = connection.cursor(pymysql.cursors.DictCursor)
+    sql = '''select api_key.exchange, api_key.user_id, bot_setting.* from api_key, bot_setting where api_key.user_id = %s and bot_setting.bot_id = api_key.id'''
+    my_cursor.execute(sql, user_id)
+    res = my_cursor.fetchall()
+    connection.commit()
+    connection.close()
+    return res

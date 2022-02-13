@@ -21,9 +21,14 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 @login_required
 def home():
-    print('test')
-    data = {}
-    return render_template("home.html", user=current_user, data=data)
+    user_id = session['_user_id']
+    bot_list = user.select_bot(user_id)
+    print(bot_list)
+    # bot_setting = []
+    # for i in bot_list:
+    #     setting = user.select_bot_setting(i['id'])
+    #     bot_setting.append(setting)
+    return render_template("home.html", user=current_user, bot_list=bot_list)
 
 
 
@@ -81,7 +86,6 @@ def insert_apisetting():
 
 @views.route('/apisetting', methods=['DELETE'])
 def delete_apisetting():
-    print('delete')
     number = request.form['index']
     user.update_api_key(number)
     return 'success'
@@ -89,6 +93,52 @@ def delete_apisetting():
 
 
 
+# ''' UPBIT ROUTE'''
+@views.route('/upbit_bot', methods=['GET', 'POST'])
+@login_required
+def upbit_botonoff():
+    try:
+        bot_id = 2
+        user_id = session['_user_id']
+        print(user_id)
+        settingValue = user.select_bot_setting(bot_id)
+        print(settingValue)
+        data = 'off'
+        okexuser = user.user(user_id)
+        username = okexuser['username']
+        # access_key = settingValue['access_key']
+        # secret_key = settingValue['secret_key']
+        currency = settingValue['currency']
+        appointment = 'off'
+        buydata = user.buyintervalStatus(bot_id)
+        stoploss_onoff = settingValue['stoploss_onoff']
+        # upbit = pyupbit.Upbit(access_key, secret_key)
+        currency_bal = 0
+        payment_bal = 0
+        # getorder = upbit.get_order('KRW-' + currency, state='wait')
+        # getorders = sorted(getorder, key=lambda person: (person['price']), reverse=True)
+        # if len(getorders) > 0:
+        #     sum = 0
+        #     for i in getorders:
+        #         sum += int(float(i['price']) * float(i['volume']))
+        #         i['sum'] = sum
+        #         i['krw'] = int(float(i['price']) * float(i['volume']))
+        #         i['created_at'] = i['created_at'][:-6]
+
+        getorders = []
+        # if request.method == 'POST':
+        #     upbit_mysqldb.botUpdate(user_id)
+        #     data = upbit_mysqldb.botStatus(user_id)
+        #     settingValue = upbit_mysqldb.settingValue(user_id)
+        #     # if data == 'on':
+        #     t2 = upbit_Api.Worker('upbit'+str(user_id))
+        #     t2.run()
+        #     print('t2 start')
+        return render_template("upbit_bot.html", user=current_user, payment_bal=int(payment_bal), stoploss_onoff=stoploss_onoff, data=data, currency_bal=float(currency_bal), settingValue=settingValue, tables=getorders, data2=buydata, username=username, appointment=appointment)
+
+    except Exception as e:
+        print(e)
+        return e
 
 
 
@@ -383,70 +433,15 @@ def okex_get_ticker():
     return jsonify(ticker=ticker)
 
 
+# @views.route('/upbit_bot/<id>', methods=['GET'])
+# @login_required
+# def upbit_bot(id):
+#     user_id = session['_user_id']
+#     bot_list = user.select_bot(user_id)
+#     print('test')
+#     return render_template("home.html", user=current_user, bot_list=bot_list)
 
 
-# ''' UPBIT ROUTE'''
-@views.route('/upbit_bot/test', methods=['GET', 'POST'])
-@login_required
-def upbit_botonoff():
-    try:
-        user_id = session['_user_id']
-        print(user_id)
-        settingValue = upbit_mysqldb.settingValue(user_id)
-        data = upbit_mysqldb.botStatus(user_id)
-        okexuser = user.user(user_id)
-        bot = user.select_api_key(user_id)
-        username = okexuser['username']
-        access_key = bot[0]['access_key']
-        secret_key = bot[0]['secret_key']
-        bot_id = 21
-        settingValue = user.select_bot_setting(bot_id)
-        print('-----------------------------')
-        print(settingValue)
-        print('-----------------------------')
-        currency = settingValue['currency']
-        appointment = 'off'
-        buydata = user.buyintervalStatus(bot_id)
-        stoploss_onoff = upbit_mysqldb.stoplossStatus(user_id)
-        upbit = pyupbit.Upbit(access_key, secret_key)
-        currency_bal = upbit.get_balance_t(currency)
-        payment_bal = upbit.get_balance_t()
-        # if currency_bal == None:
-        #     settingValue = {
-        #         'apikey': ' apikey 확인요망',
-        #         'secretkey': ' secretkey 확인요망',
-        #         'currency': ' ',
-        #         'start_payment': 0,
-        #     }
-        #     currency_bal = 0
-        #     getorders = None
-        #     print('volume = None')
-        #     return redirect('apisetting')
-        # else:
-        #     getorder = upbit.get_order('KRW-' + currency, state='wait')
-        #     getorders = sorted(getorder, key=lambda person: (person['price']), reverse=True)
-        #     if len(getorders) > 0:
-        #         sum = 0
-        #         for i in getorders:
-        #             sum += int(float(i['price']) * float(i['volume']))
-        #             i['sum'] = sum
-        #             i['krw'] = int(float(i['price']) * float(i['volume']))
-        #             i['created_at'] = i['created_at'][:-6]
-
-        # if request.method == 'POST':
-        #     upbit_mysqldb.botUpdate(user_id)
-        #     data = upbit_mysqldb.botStatus(user_id)
-        #     settingValue = upbit_mysqldb.settingValue(user_id)
-        #     # if data == 'on':
-        #     t2 = upbit_Api.Worker('upbit'+str(user_id))
-        #     t2.run()
-        #     print('t2 start')
-        return jsonify(settingValue)
-            #render_template("upbit_bot.html", user=current_user, payment_bal=int(payment_bal), stoploss_onoff=stoploss_onoff, data=data, currency_bal=float(currency_bal), settingValue=settingValue, tables=getorders, data2=buydata, username=username, appointment=appointment)
-
-    except Exception as e:
-        print(e)
-        return e
 
 
 @views.route('/upbit_get_order_list', methods=['GET', 'POST'])
